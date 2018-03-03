@@ -1,0 +1,155 @@
+
+
+
+body{
+	background-color: rgba(100, 56, 0, 1);
+}
+
+
+#Logopng{
+	height: 130px;
+	width: 130px;
+	-webkit-transition: height .2s, width .2s ; /* Safari */
+	transition: height .2s, width .2s;
+}
+
+.scrolled-logo{
+	height: 45px !important;
+	width: 45px !important;
+}
+
+#Namepng{
+	height: 100px;
+	width: 280px;
+	-webkit-transition: height .5s, width .5s; /* Safari */
+	transition: height .5s, width .5s;
+
+}
+
+.scrolled-name{
+	height: 35px !important;
+	width: 85px !important;
+}
+
+
+.parallax-window {
+    min-height: 1800px;
+    background: transparent;
+}
+
+.parallax-window h1{
+	padding-top: 300px;
+
+	text-align: center;
+	font-size: 150px;
+	font-family: 'Roboto';
+	color: rgba(255,255,255,.9);
+
+}
+
+.parallax-window h2{
+		font-family: 'Roboto';
+	padding-top: 0px;
+	text-align: center;
+	font-size: 30px;
+	color: rgba(255,255,255,.9);
+	padding-bottom: 100px;
+}
+
+h3{
+	padding-top: 0px;
+	text-align: center;
+	font-size: 30px;
+	margin-top: 50px;
+	margin-left: 30px;
+	margin-right: 30px;
+}
+
+
+.window-wrapper{
+	height: 200px;
+	background: #fff;
+
+}
+
+.form-inline{
+	font-size: 20px;
+	color: black;
+}
+
+.navbar {
+	background-color: rgba(0,0,0,.4);
+}
+
+.nav-link{
+	font-size: 25px;
+	color: #fff;
+	col
+}
+
+li > a {
+  position: relative;
+  color: rgb(142, 66, 0);
+  text-decoration: none;
+	font-weight: bold;
+}
+
+li > a:hover { color: rgb(142, 66, 0) !important; }
+
+
+li > a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 20%;
+  left: 0;
+  background-color: rgb(142, 66, 0);
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.2s ease-in-out 0s;
+  transition: all 0.2s ease-in-out 0s;
+}
+
+li > a:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+.row{
+	padding: 30px 10px 10px 30px;
+	text-align: center;
+	background-color: rgba(0,0,0,.7);
+}
+
+#yup{
+	font-size: 40px;
+	color: yellow;
+}
+
+.scroll-nav {
+  height: 40px !important;
+  line-height: 40px !important;
+}
+
+
+
+#global-nv {
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  height: 130px;
+  width: 100%;
+  background-color: rgba(0,0,0,.4);
+  color: #fff;
+  line-height: 100px;
+    -webkit-transition: height .5s, line-height .5s; /* Safari */
+    transition: height .5s, line-height .5s;
+}
+
+
+.scrolled-a{
+  font-size: 15px !important;
+}
