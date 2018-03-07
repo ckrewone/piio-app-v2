@@ -16,10 +16,16 @@
 <body>
 
 	<header id="top">
-		<nav class="navbar navbar-expand-md" id="global-nv">
-			<a class="brand" href="#top" onclick="indexView()"> <img id="Logopng"  src="image/favicon.png" ><img id="Namepng" src="image/name2.png" ></a>
-		</ul>
-		<ul id="logsign" class="navbar-nav ml-auto">
+		<nav class="navbar navbar-expand-sm" id="global-nv">
+			<a class="brand" href="#top" onclick="indexView()"> <img id="Logopng"  src="image/favicon.png" ></a>
+		       <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		         <span class="icon-bar"></span>
+		         <span class="icon-bar"></span>
+		         <span class="icon-bar"></span>
+		       </a>
+		     </div>
+				     <div class="navbar-collapse collapse">
+		<ul id="logsign" class="nav navbar-nav ml-auto">
 			<li class="nav-item">
 				<a class="nav-link" href="#start2" onclick="registerView();">Sign in <i class="ion-android-add"></i> </a>
 			</li>
@@ -28,15 +34,16 @@
 				<a class="nav-link" href="#start3" onclick="loginView();">Log in <i class="ion-android-arrow-forward"></i></a>
 			</li>
 		</ul>
+	</div>
 	</nav>
 </header>
 
 
 
-<div class="parallax-window" data-parallax="scroll" data-image-src="image/bg2.jpg">
+<div id="booksbg" class="parallax-window" data-parallax="scroll" data-image-src="image/bg2.jpg">
 
 	<div id="main">
-		<h1>Welcome</h1>
+		<h1><img src="image/name2.png" ></h1>
 		<h2><a class="btn btn-sample btn-lg " href="#start" role="button" style="width:250px;">START</a></h2>
 		<div class="row" id="start" style="background-color: rgba(0,0,0,0); height:100px;"></div>
 		<div class="row">

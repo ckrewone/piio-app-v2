@@ -106,6 +106,7 @@ function loginView(){
 	$('#login').css({ display: 'block' });
 	$('#register').css({ display: 'none' });
 	$('.parallax-window').addClass('parallax-window-login');
+  $('#info').css({ display: 'none'});
 }
 
 function indexView(){
@@ -113,6 +114,7 @@ function indexView(){
 	$('#login').css({ display: 'none' });
 	$('#register').css({ display: 'none' });
 	$('.parallax-window').removeClass('parallax-window-login');
+  $('#info').css({ display: 'block'});
 }
 
 function registerView(){
@@ -120,4 +122,5 @@ function registerView(){
 	$('#register').css({ display: 'block' });
 	$('#login').css({ display: 'none' });
 	$('.parallax-window').addClass('parallax-window-login');
+  $('#info').css({ display: 'none'});
 }

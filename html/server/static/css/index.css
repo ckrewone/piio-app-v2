@@ -2,9 +2,8 @@
 
 
 body{
-	overflow: hidden;
 	overflow-x: hidden;
-	overflow-y: hidden;
+
 }
 
 
@@ -21,8 +20,8 @@ body{
 }
 
 #Namepng{
-	height: 100px;
-	width: 280px;
+	height: 300px;
+	width: 780px;
 	-webkit-transition: height .5s, width .5s; /* Safari */
 	transition: height .5s, width .5s;
 
@@ -36,13 +35,14 @@ body{
 
 .parallax-window {
 	background-color: rgba(0,0,0,.3);
-    min-height: 2800px;
+    min-height: 2200px;
 		-webkit-transition: background-color .5s; /* Safari */
 		transition: background-color .5s;
 }
 
 .parallax-window-login{
 	background-color: rgba(0, 0, 0, .7) !important;
+	min-height: 1000px !important;
 }
 
 .btn-sample {
@@ -307,4 +307,42 @@ input::-webkit-input-placeholder {
 .login-register{
 	font-size: 11px;
 	text-align: center;
+}
+
+
+@media (max-width: 100px) {
+  .navbar-header {
+      float: none;
+  }
+  .navbar-left,.navbar-right {
+      float: none !important;
+  }
+  .navbar-toggle {
+      display: block;
+  }
+  .navbar-collapse {
+      border-top: 1px solid transparent;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+  }
+  .navbar-fixed-top {
+      top: 0;
+      border-width: 0 0 1px;
+  }
+  .navbar-collapse.collapse {
+      display: none!important;
+  }
+  .navbar-nav {
+      float: none!important;
+      margin-top: 7.5px;
+  }
+  .navbar-nav>li {
+      float: none;
+  }
+  .navbar-nav>li>a {
+      padding-top: 10px;
+      padding-bottom: 10px;
+  }
+  .collapse.in{
+      display:block !important;
+  }
 }
