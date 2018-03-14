@@ -42,7 +42,7 @@ body{
 
 .parallax-window-login{
 	background-color: rgba(0, 0, 0, .7) !important;
-	min-height: 1000px !important;
+	min-height: 1200px !important;
 }
 
 .btn-sample {
@@ -94,12 +94,17 @@ fieldset[disabled] .btn-sample.active {
 }
 
 .parallax-window h1{
-	padding-top: 400px;
+	padding-top: 300px;
 	text-align: center;
 	font-size: 150px;
 	font-family: 'Roboto';
 	color: rgba(255,255,255,.9);
 
+}
+
+#mainLogo{
+	height: 300px;
+	width: 600px;
 }
 
 .parallax-window h2{
@@ -310,39 +315,39 @@ input::-webkit-input-placeholder {
 }
 
 
-@media (max-width: 100px) {
-  .navbar-header {
-      float: none;
-  }
-  .navbar-left,.navbar-right {
-      float: none !important;
-  }
-  .navbar-toggle {
-      display: block;
-  }
-  .navbar-collapse {
-      border-top: 1px solid transparent;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
-  }
-  .navbar-fixed-top {
-      top: 0;
-      border-width: 0 0 1px;
-  }
-  .navbar-collapse.collapse {
-      display: none!important;
-  }
-  .navbar-nav {
-      float: none!important;
-      margin-top: 7.5px;
-  }
-  .navbar-nav>li {
-      float: none;
-  }
-  .navbar-nav>li>a {
-      padding-top: 10px;
-      padding-bottom: 10px;
-  }
-  .collapse.in{
-      display:block !important;
-  }
+@media only screen and (max-width: 630px) {
+    #global-nv {
+		  height: 30px;
+		  width: 100%;
+		  background-color: rgba(0,0,0,.6);
+		  color: #fff;
+		  line-height: 20px;
 }
+		#Logopng{
+			height: 30px;
+			width: 30px;
+		}
+
+		.nav-link{
+			font-size: 13px;
+		}
+
+		#mainLogo{
+			height: 150px;
+			width: 400px;
+		}
+
+.parallax-window h1{
+			padding-top: 50px;
+		}
+
+
+	}
+
+
+	@media only screen and (max-width: 399px) {
+		#mainLogo{
+			height: 100px;
+			width: 280px;
+		}
+	}
