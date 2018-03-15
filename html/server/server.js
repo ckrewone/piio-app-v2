@@ -5,6 +5,20 @@ var serveStatic = require('serve-static');  // serve static files
 var socketIo = require("socket.io")(https);        // web socket external module
 var easyrtc = require("../");               // EasyRTC external module
 var fs = require('fs');
+var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
+var session = require('express-session');
+var MongoStore = require('connect-mongo')(session);
+
+//connect to MongoDB
+mongoose.connect('mongodb://localhost/testForAuth');
+var db = mongoose.connection;
+
+//handle mongo error
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function () {
+  // we're connected!
+});
 
 var usernames = {};
 
@@ -17,7 +31,42 @@ var options = {
 process.title = "node-easyrtc";
 
 var app = express();
-app.use(serveStatic('static', {'index': ['index.html']}));
+
+//use sessions for tracking logins
+app.use(session({
+ secret: 'work hard',
+ resave: true,
+ saveUninitialized: false,
+ store: new MongoStore({
+   mongooseConnection: db
+ })
+}));
+// parse incoming requests
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
+
+// serve static files from template
+app.use(express.static(__dirname + '/static'));
+
+// include routes
+var routes = require('./static/router');
+app.use('/', routes);
+
+// catch 404 and forward to error handler
+app.use(function (req, res, next) {
+  var err = new Error('File Not Found');
+  err.status = 404;
+  next(err);
+});
+
+// error handler
+// define as the last app.use callback
+app.use(function (err, req, res, next) {
+  res.status(err.status || 500);
+  res.send(err.message);
+});
+
 
 
 var webServer = https.createServer(options, app).listen(443);
