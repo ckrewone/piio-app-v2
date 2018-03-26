@@ -1,0 +1,41 @@
+
+#main{
+     text-align: center;
+}
+
+.btn{
+     margin: 10px 10px 10px 10px;
+}
+h2 .btn{
+     width: 200px;
+}
+
+
+.empty-place{
+     height: 400px;
+}
+
+.info .row{
+     text-align: center;
+     margin-top: 300px;
+     background-color: rgba(0,0,0,.8);
+}
+
+h4{
+     font-size: 50px;
+     margin: 60px 10px 30px 10px;
+     color: #fff;
+     font-weight: 300;
+}
+
+p{
+     color: #fff;
+     font-size: 20px;
+     font-weight: 200;
+}
+
+#main h1 img{
+     margin-top: 200px;
+     height: 300px;
+     width: 600px;
+}

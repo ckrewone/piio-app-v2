@@ -1,0 +1,78 @@
+.nav-link{
+     color: #fff;
+     font-size: 20px;
+     margin-right: 20px;
+}
+
+
+.navbar{
+     background: rgba(0,0,0,.8);
+     height: 130px;
+     transition: all 0.3s ease-in-out 0s;
+}
+
+
+
+li > .nav-link {
+     position: relative;
+     color: rgb(142, 66, 0);
+     text-decoration: none;
+     font-weight: bold;
+}
+
+
+li >.nav-link:hover { color: rgb(142, 66, 0) !important; }
+
+li >.nav-link:before {
+     content: "";
+     position: absolute;
+     width: 50%;
+     height: 3px;
+     bottom: 1%;
+     text-align: center;
+     left: 10%;
+     background-color: rgb(142, 66, 0);
+     visibility: hidden;
+     -webkit-transform: scaleX(0);
+     transform: scaleX(0);
+     -webkit-transition: all 0.3s ease-in-out 0s;
+     transition: all 0.3s ease-in-out 0s;
+}
+
+li >.nav-link:hover:before {
+     visibility: visible;
+     -webkit-transform: scaleX(1);
+     transform: scaleX(1);
+}
+
+.or{
+     color: #fff;
+     font-size: 18px;
+     text-align: center;
+     margin: 14px 15px 10px 1px;
+     font-weight: 500;
+
+}
+
+
+
+.App-logo {
+     height:170px;
+     width: 170px;
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+}
+
+#main img{
+     height: 100px;
+     width: 100px;
+}
+
+.nav-item h3 {
+     color: rgb(122, 56, 0);
+     font-size: 20px;
+     padding-top: 8%;
+     padding-right: 10%;
+     font-weight: 400;
+}
