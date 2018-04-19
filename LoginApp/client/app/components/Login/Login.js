@@ -121,7 +121,8 @@ class Login extends Component {
                          <Fade cascade>
                               <div className="container">
                                    <div className="row">
-                                        <div className="col-lg-12"
+                                        <div className="col-sm-4"></div>
+                                        <div className="col-sm-4"
                                              id="log-box">
                                              <div
                                                   className="form-group">

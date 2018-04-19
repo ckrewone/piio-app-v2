@@ -12,9 +12,6 @@ class Details extends Component{
                     <div className="row">
                          <div className="col-lg-2" />
                          <div className="col-lg-8">
-                              <img
-                                   width="170px"
-                                   height="140px" />
                               <h4>
                                    Let's start <a className="ion-android-happy" />
                          </h4>

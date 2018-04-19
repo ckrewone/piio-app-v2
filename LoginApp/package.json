@@ -1,14 +1,9 @@
 {
-  "name": "MERN-boilerplate",
+  "name": "PiioApp",
   "version": "1.0.0",
-  "description": "MERN stack project boilerplate",
-  "author": "Eugene Cheung",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/arkon/MERN-boilerplate.git"
-  },
+  "description": "PiioByMERN",
+  "author": "Michal Zakowski",
   "license": "MIT",
-  "private": true,
   "scripts": {
     "start": "webpack -p --progress --profile --colors && node server",
     "start:dev": "node server"
@@ -30,6 +25,8 @@
     "react-router": "^4.1.2",
     "react-router-dom": "^4.1.2",
     "react-transition-group": "^1.2.1",
+    "socket.io": "^2.0.4",
+    "socket.io-client": "^2.0.4",
     "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {

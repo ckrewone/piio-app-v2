@@ -2,10 +2,8 @@ import React from 'react';
 
 const Footer = () => (
      <div>
-<footer>
-PiioApp
-</footer>
-     </div>
+
+</div>
 );
 
 export default Footer;

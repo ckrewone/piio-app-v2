@@ -17,12 +17,12 @@ h2 .btn{
 
 .info .row{
      text-align: center;
-     margin-top: 300px;
+     margin-top: 12rem;
      background-color: rgba(0,0,0,.8);
 }
 
 h4{
-     font-size: 50px;
+     font-size: 2.5rem;
      margin: 60px 10px 30px 10px;
      color: #fff;
      font-weight: 300;
@@ -30,12 +30,12 @@ h4{
 
 p{
      color: #fff;
-     font-size: 20px;
+     font-size: 1rem;
      font-weight: 200;
 }
 
 #main h1 img{
-     margin-top: 200px;
-     height: 300px;
-     width: 600px;
+     margin-top: 9rem;
+     height: 15rem;
+     width: 30rem;
 }

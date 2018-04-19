@@ -20,9 +20,6 @@ class Header extends Component {
                                    <Link className="nav-link" to="/log">Log in<i className="ion-android-arrow-forward" /></Link>
                               </li>
                               <li className="nav-item">
-                                   <h2 className="or">or</h2>
-                              </li>
-                              <li className="nav-item">
                                    <Link className="nav-link" to="/reg">Sign up <i className="ion-android-arrow-forward" /></Link>
                               </li>
 

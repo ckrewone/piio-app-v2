@@ -4,6 +4,7 @@ import Fade from 'react-reveal/Fade';
 import Zoom from 'react-reveal/Zoom';
 import Flip from 'react-reveal/Flip';
 import HeaderAccount from '../Header/HeaderAccount';
+import openSocket from 'socket.io-client';
 import {
      getFromStorage,
      setInStorage,
@@ -36,6 +37,9 @@ class Account extends Component {
                               first: json.first,
                               last: json. last
                          });
+                         var socket = openSocket('http://localhost:3000/log');
+                         socket.on('connection', (socket)=>{});
+                         socket.emit('message', 'helllo');
                     } else {
                          this.setState({
                          });
@@ -56,11 +60,10 @@ class Account extends Component {
                     <div className="info">
                          <Fade>
                               <div className="row">
-                                   <div className="col-lg-2" />
+                                   <div className="col-lg-2">
+                                        <h2>Online users: </h2>
+                                   </div>
                                    <div className="col-lg-8">
-                                        <img
-                                             width="170px"
-                                             height="140px" />
                                         <Zoom>
                                              <h4>
                                                   Let's start dude <a className="ion-android-happy" />

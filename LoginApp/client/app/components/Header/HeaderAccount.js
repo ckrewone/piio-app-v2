@@ -59,8 +59,6 @@ class HeaderAccount extends Component {
           }
      }
 
-
-
      render(){
 
 

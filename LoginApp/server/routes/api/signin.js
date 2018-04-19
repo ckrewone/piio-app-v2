@@ -1,6 +1,6 @@
 const User = require('../../models/User');
 const UserSession = require('../../models/UserSession');
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
 
 Object.size = function(obj) {
@@ -150,8 +150,6 @@ module.exports = (app) => {
                          success: true,
                          message: 'Valid sign in',
                          token: doc._id,
-                         first: user.firstName,
-                         last: user.lastName
                     });
                });
 

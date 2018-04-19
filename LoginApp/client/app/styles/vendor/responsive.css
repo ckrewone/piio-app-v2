@@ -1,7 +1,29 @@
 @media only screen and (max-width: 991px) {
-     .return-page .row{
-          margin-left: 26%;
-          margin-right: 26%;
+     html{
+          font-size: 17px;
      }
+}
 
+@media screen and (max-width: 920px) {
+     html{
+          font-size: 16px;
+     }
+}
+
+@media screen and (max-width: 780px) {
+     html{
+          font-size: 15px;
+     }
+}
+
+@media screen and (max-width: 720px) {
+     html{
+          font-size: 14px;
+     }
+}
+
+@media screen and (max-width: 640px) {
+     html{
+          font-size: 13px;
+     }
 }
