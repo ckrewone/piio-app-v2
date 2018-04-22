@@ -59,14 +59,12 @@ if (isDev) {
 }
 
 io.on('connection', (socket) =>{
-     console.log('user is connected!');
-
-     socket.on('message', function(msg){
-          console.log('message: ' + msg);
-     });
-
-     socket.on('disconnect', function(){
-          console.log('user disconnected');
+     console.log("connect");
+     socket.on('message', function(data){
+          socket.broadcast.emit('message', {
+               body: data.body,
+               username: data.username
+          });
      });
 });
 

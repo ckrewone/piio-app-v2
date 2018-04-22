@@ -1,0 +1,69 @@
+@media only screen and (max-width: 991px) {
+     html{
+          font-size: 17px;
+     }
+     .myclassname{
+          height: 40vh;
+          overflow-y: scroll;
+          padding: 1rem 1rem 1rem 1rem;
+          margin-bottom: 50px;
+     }
+
+
+     #chat-col .form-control{
+          text-align: center;
+          width: 51rem;
+          margin-left: 2rem;
+     }
+
+
+     #onlineusers-box{
+          height: 40vh;
+          margin-top: 5rem;
+          margin-left: 5rem;
+          margin-right: 5rem;
+          border-radius: 5px;
+
+     }
+
+     #main-account-page{
+          background-color:  rgb(0,0,0);
+          text-align: center;
+          border-radius: 10px;
+     }
+
+
+
+}
+
+@media screen and (max-width: 920px) {
+     html{
+          font-size: 16px;
+     }
+     #chat-col .form-control{
+          width: 41rem;
+          margin-left: 2rem;
+     }
+}
+
+@media screen and (max-width: 780px) {
+     html{
+          font-size: 15px;
+     }
+}
+
+@media screen and (max-width: 720px) {
+     html{
+          font-size: 14px;
+     }
+     #chat-col .form-control{
+          width: 21rem;
+          margin-left: 2rem;
+     }
+}
+
+@media screen and (max-width: 640px) {
+     html{
+          font-size: 13px;
+     }
+}

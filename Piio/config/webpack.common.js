@@ -30,11 +30,16 @@ module.exports = {
 
      module: {
           rules: [
+
                // JS files
                {
                     test: /\.jsx?$/,
                     include: helpers.root('client'),
-                    loader: 'babel-loader'
+                    loader: 'babel-loader',
+                    query: {
+                         presets: ['es2015', 'react'],
+                         plugins: ['transform-class-properties']
+                    }
                },
                {
                     test: /\.(png|jpg|gif)$/,
