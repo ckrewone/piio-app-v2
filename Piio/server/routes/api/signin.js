@@ -4,11 +4,11 @@ const mongoose = require('mongoose');
 
 
 Object.size = function(obj) {
-    var size = 0, key;
-    for (key in obj) {
-        if (obj.hasOwnProperty(key)) size++;
-    }
-    return size;
+     var size = 0, key;
+     for (key in obj) {
+          if (obj.hasOwnProperty(key)) size++;
+     }
+     return size;
 };
 
 module.exports = (app) => {
@@ -228,6 +228,4 @@ module.exports = (app) => {
 
           });
      });
-
-
 };

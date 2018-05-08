@@ -58,14 +58,35 @@ if (isDev) {
      });
 }
 
+var users = [];
+
+//remove duplicate elems of array
+function removeDuplicates(arr){
+    let unique_array = []
+    for(let i = 0;i < arr.length; i++){
+        if(unique_array.indexOf(arr[i]) == -1){
+            unique_array.push(arr[i])
+        }
+    }
+    return unique_array
+}
+
+var connectedCount = 0;
+
 io.on('connection', (socket) =>{
-     console.log("connect");
      socket.on('message', function(data){
           socket.broadcast.emit('message', {
                body: data.body,
                username: data.username
           });
      });
+     socket.on('send-nickname', (username)=>{
+          socket.username = username
+          users.push(socket.username)
+          users = removeDuplicates(users)
+          socket.emit('send-nickname', users)
+     });
+
 });
 
 

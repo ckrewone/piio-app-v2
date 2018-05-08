@@ -2,19 +2,9 @@
      html{
           font-size: 17px;
      }
-     .myclassname{
-          height: 40vh;
-          overflow-y: scroll;
-          padding: 1rem 1rem 1rem 1rem;
-          margin-bottom: 50px;
-     }
 
 
-     #chat-col .form-control{
-          text-align: center;
-          width: 51rem;
-          margin-left: 2rem;
-     }
+
 
 
      #onlineusers-box{
@@ -40,10 +30,6 @@
      html{
           font-size: 16px;
      }
-     #chat-col .form-control{
-          width: 41rem;
-          margin-left: 2rem;
-     }
 }
 
 @media screen and (max-width: 780px) {
@@ -55,10 +41,6 @@
 @media screen and (max-width: 720px) {
      html{
           font-size: 14px;
-     }
-     #chat-col .form-control{
-          width: 21rem;
-          margin-left: 2rem;
      }
 }
 

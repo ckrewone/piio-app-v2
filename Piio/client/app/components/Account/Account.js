@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import { Link } from 'react-router-dom';
 import Fade from 'react-reveal/Fade';
+import ReactDOM from 'react-dom'
 import Zoom from 'react-reveal/Zoom';
-import Flip from 'react-reveal/Flip';
 import HeaderAccount from '../Header/HeaderAccount';
 import io from 'socket.io-client';
 import {
      getFromStorage,
      setInStorage,
 } from '../../utils/storage';
+
+const socket = io('http://localhost:3000');
 
 class Account extends Component {
      constructor(props) {
@@ -40,18 +40,19 @@ class Account extends Component {
                               first: json.first,
                               last: json. last
                          });
+                         const username = this.state.first + ' ' + this.state.last;
+                         socket.emit('send-nickname', username);
                     }
                });
           }
-          this.socket = io('http://localhost:3000');
-          this.socket.on('message', message => {
+          socket.on('message', message => {
                this.setState({ messages: [message, ...this.state.messages] });
           });
      }
 
      componentDidUpdate(){
           var node = ReactDOM.findDOMNode(this.refs.index);
-          if(node) { node.scrollIntoView();  }
+          if(node) { node.scrollIntoView(); }
      }
 
      handleSubmit = event => {
@@ -63,7 +64,7 @@ class Account extends Component {
                     username
                }
                this.setState({ messages: [message, ...this.state.messages] });
-               this.socket.emit('message', message);
+               socket.emit('message', message);
                event.target.value = '';
           }
      }
@@ -82,59 +83,66 @@ class Account extends Component {
                     return (
                          <div>
                               <HeaderAccount />
-                              <Fade>
-
-                                   <div className="row" id="account-row" >
-                                        <Fade left>
-                                             <div className="col-lg-2" id="onlineusers-box">
-                                                  <h2>Online users: </h2>
-                                             </div>
-                                        </Fade>
-                                        <div className="col-lg-5" id="main-account-page">
-                                                  <h4>
-                                                       Let's start dude <a className="ion-android-happy" />
+                              {
+                                   (this.state.first) ? (
+                                        <Zoom>
+                                             <h4>
+                                                  <span>{this.state.first}</span> <span>{this.state.last}</span>
                                              </h4>
-                                        {
-                                             (this.state.first) ? (
-                                                  <Zoom>
-                                                       <h4>
-                                                            <span>{this.state.first}</span> <span>{this.state.last}</span>
-                                                       </h4>
-                                                  </Zoom>
-                                             ) : null
-                                        }
-                                        <Zoom left>
-                                             <p>
-                                                  Account page here!!!
-                                             </p>
                                         </Zoom>
-                                   </div>
-                                   <Fade right>
-                                        <div className="col-lg-5" id="chat-col">
-                                             <h1>Chat: </h1>
-                                             <div className="myclassname">
+                                   ) : null
+                              }
 
-                                                       {messages}
+                              <Fade right>
+                                   <div  id="chat-col">
+                                        <h1>Chat: </h1>
+                                        <div className="myclassname">
 
-                                             </div>
-                                             <input type='text' className="form-control" placeholder='Enter a message...' onKeyUp={this.handleSubmit}></input>
+                                             {messages}
+
                                         </div>
-                                   </Fade>
-                              </div>
-                         </Fade>
-                    </div>
-               );
+                                        <input type='text' className="form-control" placeholder='Enter a message...' onKeyUp={this.handleSubmit}></input>
+                                   </div>
+                              </Fade>
+                         </div>
+                    );
+               }
           }
 
 
 
-     }
+          export default Account;
 
 
-     export default Account;
-     // <div className="input-group mb-3">
-     //      <div className="input-group-prepend">
-     //           <button className="btn btn-outline-secondary" type="button">Button</button>
-     //      </div>
-     //      <input type='text' className="form-control" aria-label="" aria-describedby="basic-addon1" placeholder='Enter a message...' onKeyUp={this.handleSubmit} />
-     // </div>
+          //      <Fade>
+          //
+          //      <h4>
+          //                Let's start <a className="ion-android-happy" />
+          //      </h4>
+          //      {
+          //           (this.state.first) ? (
+          //                <Zoom>
+          //                     <h4>
+          //                          <span>{this.state.first}</span> <span>{this.state.last}</span>
+          //                     </h4>
+          //                </Zoom>
+          //           ) : null
+          //      }
+          //      <Zoom left>
+          //           <p>
+          //                Account page here!!!
+          //           </p>
+          //      </Zoom>
+          //
+          //      <Fade right>
+          //           <div  id="chat-col">
+          //                <h1>Chat: </h1>
+          //                <div className="myclassname">
+          //
+          //                     {messages}
+          //
+          //                </div>
+          //                <input type='text' className="form-control" placeholder='Enter a message...' onKeyUp={this.handleSubmit}></input>
+          //           </div>
+          //      </Fade>
+          // </Fade>

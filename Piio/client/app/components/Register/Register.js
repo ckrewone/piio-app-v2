@@ -1,15 +1,10 @@
 import React, { Component } from 'react';
 import 'whatwg-fetch';
 import Header from '../Header/Header';
-import img from '../../img/favicon.png'
 import Fade from 'react-reveal/Fade';
 import Account from '../Account/Account';
 import SuccessPage from '../Account/SuccessPage';
-
 import { Link } from 'react-router-dom';
-
-
-
 import {
      getFromStorage,
      setInStorage,
@@ -20,7 +15,6 @@ class Register extends Component {
           super(props);
 
           this.state = {
-               isLoading: true,
                token: '',
                signUpError:'',
                signUpEmail: '',
@@ -49,18 +43,8 @@ class Register extends Component {
                     if(json.success){
                          this.setState({
                               token,
-                              isLoading: false
                          });
-                    } else {
-                         this.setState({
-                              isLoading: false,
-                         });
-
                     }
-               });
-          } else {
-               this.setState({
-                    isLoading: false,
                });
           }
      }
@@ -87,17 +71,12 @@ class Register extends Component {
      }
 
      onSignUp(){
-
           const {
                signUpEmail,
                signUpLastName,
                signUpPassword,
                signUpFirstName
           } = this.state;
-
-          this.setState({
-               isLoading: true
-          });
 
           fetch('/api/account/signup', {
                method: 'POST',
@@ -116,13 +95,11 @@ class Register extends Component {
                if(json.success){
                     this.setState({
                          signUpError: json.message,
-                         isLoading: false,
                          success: json.success
                     });
                } else{
                     this.setState({
-                         signUpError: json.message,
-                         isLoading: false
+                         signUpError: json.message
                     });
                }
           });
@@ -133,7 +110,6 @@ class Register extends Component {
 
      render() {
           const {
-               isLoading,
                token,
                signUpLastName,
                signUpFirstName,

@@ -23,7 +23,7 @@ body {
      margin: 0;
 
      /* Full height */
-     background-image:url('https://joemull.com/wp-content/uploads/2016/12/books.jpg');
+     background-image:url('../img/books.jpg');
      background-color: black;
      height: 100%;
 
@@ -532,27 +532,43 @@ fieldset[disabled] .btn-sample.active {
 
 
 #chat-col{
-
      background-color: rgba(0,0,0,.9);
+     position: absolute;
+     top: 20%;
+     left: 50%;
+     right: 0%;
+     bottom: 0%;
+     border-radius: 5px;
 
 }
 
 
 .myclassname{
-     height: 73vh;
+     position: absolute;
+     word-break: break-all;
+     width: 100%;
+     height: 63vh;
+     padding-left: 2rem;
+     top:10%;
      overflow-y: scroll;
-     padding: 1rem 1rem 1rem 1rem;
      color: rgba(255,255,255,.8)
 }
 
 
 #chat-col .form-control{
      position: absolute;
+     left: 3%;
+     bottom: 2%;
      opacity: 0.8;
      margin-top: 5px;
-     bottom: 10px;
      background-color: rgba(0,0,0,.0);
      color: rgba(255,255,255,.9);
+}
+
+#chat-col h1{
+     position: absolute;
+     top:2%;
+     left: 3%;
 }
 
 

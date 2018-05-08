@@ -2,10 +2,8 @@
 import React, { Component } from 'react';
 import 'whatwg-fetch';
 import Header from '../Header/Header';
-import img from '../../img/favicon.png'
 import Fade from 'react-reveal/Fade';
 import { Link } from 'react-router-dom';
-
 import Account from '../Account/Account'
 import {
      getFromStorage,
@@ -23,11 +21,9 @@ class Login extends Component {
                signInPassword: ''
           };
 
-
           this.onTextboxChangeSignInEmail = this.onTextboxChangeSignInEmail.bind(this);
           this.onTextboxChangeSignInPassword = this.onTextboxChangeSignInPassword.bind(this);
           this.onSignIn = this.onSignIn.bind(this);
-
      }
 
      componentDidMount(){
@@ -67,10 +63,6 @@ class Login extends Component {
                signInError
           } = this.state;
 
-          this.setState({
-               isLoading: true,
-          });
-
           fetch('/api/account/signin', {
                method: 'POST',
                headers: {
@@ -87,15 +79,13 @@ class Login extends Component {
                     setInStorage('the_main_app', { token: json.token});
                     this.setState({
                          signInError: json.message,
-                         isLoading: false,
                          token: json.token,
                          name: json.first,
                          last: json.last
                     });
                } else{
                     this.setState({
-                         signInError: json.message,
-                         isLoading: false
+                         signInError: json.message
                     });
                }
           });
@@ -116,7 +106,7 @@ class Login extends Component {
           if(!token){
                return (
 
-                    <div className="return-page">
+                    <div className="login-page">
                          <Header />
                          <Fade cascade>
                               <div className="container">

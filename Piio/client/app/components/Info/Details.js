@@ -9,19 +9,19 @@ class Details extends Component{
                <div className="info">
                     <Header />
                     <Fade>
-                    <div className="row">
+                         <div className="row">
+                              <div className="col-lg-2" />
+                              <div className="col-lg-8">
+                                   <h4>
+                                        Let's start <a className="ion-android-happy" />
+                              </h4>
+                              <p>
+                                   This is place for instruction
+                              </p>
+                         </div>
                          <div className="col-lg-2" />
-                         <div className="col-lg-8">
-                              <h4>
-                                   Let's start <a className="ion-android-happy" />
-                         </h4>
-                         <p>
-                              This is place for instruction
-                         </p>
                     </div>
-                    <div className="col-lg-2" />
-               </div>
-          </Fade>
+               </Fade>
           </div>
      );
 }
