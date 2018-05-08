@@ -5,6 +5,7 @@
 ### Work in progress...
 
 clone repo
+run mongod
 ```sh
 $ npm install
 $ npm start
