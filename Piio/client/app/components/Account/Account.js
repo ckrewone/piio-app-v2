@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import Fade from 'react-reveal/Fade';
 import ReactDOM from 'react-dom'
+import { Link } from 'react-router-dom';
 import Zoom from 'react-reveal/Zoom';
 import HeaderAccount from '../Header/HeaderAccount';
+import Call from './CallBtn';
 import io from 'socket.io-client';
 import {
      getFromStorage,
@@ -10,6 +12,7 @@ import {
 } from '../../utils/storage';
 
 const socket = io('http://localhost:3000');
+
 
 class Account extends Component {
      constructor(props) {
@@ -23,6 +26,8 @@ class Account extends Component {
           }
 
      }
+
+
 
 
 
@@ -69,6 +74,9 @@ class Account extends Component {
           }
      }
 
+
+
+
      render(){
           var messages = this.state.messages.map((message, index) => {
                let temp = 'index';
@@ -83,15 +91,15 @@ class Account extends Component {
                     return (
                          <div>
                               <HeaderAccount />
-                              {
-                                   (this.state.first) ? (
-                                        <Zoom>
-                                             <h4>
-                                                  <span>{this.state.first}</span> <span>{this.state.last}</span>
-                                             </h4>
-                                        </Zoom>
-                                   ) : null
-                              }
+                              <h4>Online users: </h4>
+                              <div className="list-group" id="list-tab" role="tablist">
+                                   <a className="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Kitty Cat</a>
+                                   <a className="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Doggy Dog</a>
+                                   <a className="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Cowwy Cow</a>
+                              </div>
+                              <Link to= '/cams'>
+                                   <Call />
+                              </Link>
 
                               <Fade right>
                                    <div  id="chat-col">

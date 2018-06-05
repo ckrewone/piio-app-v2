@@ -89,6 +89,12 @@ io.on('connection', (socket) =>{
 
 });
 
+var nsp = io.of('/info');
+nsp.on('connection', function(socket){
+  console.log('someone connected');
+});
+nsp.emit('hi', 'everyone!');
+
 
 http.listen(port, '0.0.0.0', (err) => {
      if (err) {
