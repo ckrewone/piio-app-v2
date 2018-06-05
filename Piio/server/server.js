@@ -80,6 +80,12 @@ io.on('connection', (socket) =>{
                username: data.username
           });
      });
+
+     socket.on('join', (room, callback)=>{
+          socket.join(room);
+
+     });
+
      socket.on('send-nickname', (username)=>{
           socket.username = username
           users.push(socket.username)

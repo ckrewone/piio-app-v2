@@ -6,8 +6,8 @@ const RightArrow = (props) => {
           right: '2%',
           top: '50%',
           background: 'rgba(255,255,255,.7)',
-          borderRadius: '150px',
-          padding: '10px 10px 10px 10px'
+          borderRadius: '3px',
+          padding: '10px 10px 10px 10px',
      }
 
   return (

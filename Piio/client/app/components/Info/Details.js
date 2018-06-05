@@ -13,10 +13,23 @@ class Details extends Component{
 
 
 
+
      render(){
+          let stylesDiv = {
+               background: 'rgba(0,0,0,.6)',
+               height:'88vh',
+               paddingTop: '30px'
+
+          }
+
           return (
-               <div style= {{background: '#fff'}}>
-               <Sliders />
+
+
+               <div>
+                    <Header />
+                    <div style = {stylesDiv}>
+                         <Sliders />
+                    </div>
                </div>
           );
      }

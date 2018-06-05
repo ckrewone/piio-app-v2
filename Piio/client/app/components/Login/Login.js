@@ -148,7 +148,7 @@ class Login extends Component {
                                                   <br />
                                                   <button
                                                        onClick={this.onSignIn}
-                                                       className="btn btn-sample btn-lg login-button">
+                                                       className="btn btn-sample login-button">
                                                        Sign In
                                                   </button>
                                                   <br />

@@ -5,6 +5,7 @@ import SlideThree from './SlideThree';
 import SlideFour from './SlideFour';
 import RightArrow from './RightArrow';
 import LeftArrow from './LeftArrow';
+import Fade from 'react-reveal/Fade';
 
 export default class Slider extends Component {
      constructor(props) {
@@ -21,22 +22,30 @@ export default class Slider extends Component {
      render() {
           return (
                <div className="slider">
-               { this.state.slideCount === 1 ? <SlideOne /> : null}
-               { this.state.slideCount === 2 ? <SlideTwo /> : null}
-               { this.state.slideCount === 3 ? <SlideThree /> : null}
-               { this.state.slideCount === 4 ? <SlideFour /> : null}
+                         { this.state.slideCount === 1 ? <SlideOne /> : null}
+                         { this.state.slideCount === 2 ? <SlideTwo /> : null}
+                         { this.state.slideCount === 3 ? <SlideThree /> : null}
+                         { this.state.slideCount === 4 ? <SlideFour /> : null}
 
-               <RightArrow nextSlide={this.nextSlide} />
-               <LeftArrow previousSlide={this.previousSlide} />
+                         <RightArrow nextSlide={this.nextSlide} />
+                         <LeftArrow previousSlide={this.previousSlide} />
                </div>
           );
      }
 
      nextSlide() {
-          this.setState({ slideCount: this.state.slideCount + 1 })
+          if(this.state.slideCount < 4){
+               this.setState({ slideCount: this.state.slideCount + 1 })
+          } else {
+               this.setState({ slideCount: 1})
+          }
      }
 
      previousSlide() {
-          this.setState({ slideCount: this.state.slideCount - 1 })
+          if(this.state.slideCount > 1){
+               this.setState({ slideCount: this.state.slideCount - 1 })
+          } else {
+               this.setState({ slideCount: 4})
+          }
      }
 }
