@@ -8,7 +8,6 @@ const SlideOne= (props) => {
 
      let stylesImg = {
           width: '70vw',
-          height: '70vh',
           borderRadius: '10px',
           marginLeft: 'auto',
           marginRight: 'auto',
@@ -18,7 +17,7 @@ const SlideOne= (props) => {
 
      let stylesDiv = {
           position: 'absolute',
-          bottom: '2%',
+          bottom: '2vw',
           left: '0%',
           background: 'rgba(0,0,0,.8)',
           textAlign: 'center',

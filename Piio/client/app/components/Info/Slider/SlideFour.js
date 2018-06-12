@@ -8,7 +8,6 @@ const SlideFour= (props) => {
 
      let stylesImg = {
           width: '70vw',
-          height: '70vh',
           borderRadius: '10px',
           marginLeft: 'auto',
           marginRight: 'auto',
