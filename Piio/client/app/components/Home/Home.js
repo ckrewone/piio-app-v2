@@ -4,6 +4,7 @@ import 'whatwg-fetch';
 import { Link } from 'react-router-dom';
 import Zoom from 'react-reveal/Zoom';
 import img from '../../img/name2.png';
+import img2 from '../../img/logo.svg';
 
 class Home extends Component {
 
@@ -11,7 +12,13 @@ class Home extends Component {
           super(props);
      }
 
+
      render() {
+
+          let imgStyle = {
+               height: '30vw',
+               marginTop: '10vh'
+          }
           return (
 
                <div className="return-page">
@@ -19,7 +26,7 @@ class Home extends Component {
                     <div id="main">
                          <Zoom>
                               <h1>
-                                   <img src={img}></img>
+                                   <img style={imgStyle} src={img2}></img>
                               </h1>
                               <h2>
                                    <Link

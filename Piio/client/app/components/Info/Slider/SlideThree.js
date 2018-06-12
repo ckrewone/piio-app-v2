@@ -21,11 +21,11 @@ const SlideThree= (props) => {
           top: '63%',
           left: '0%',
           background: 'rgba(0,0,0,.8)',
-          height: '20vh',
-          width: '50vw',
           textAlign: 'center',
           color: '#fff',
-          fontSize: '4rem',
+          fontSize: '3rem',
+          paddingLeft: '5vw',
+          paddingRight: '5vw',
           verticalAlign: 'middle',
           lineHeight: '20vh',
           fontWeight: '300'
@@ -37,7 +37,7 @@ const SlideThree= (props) => {
                <img style={stylesImg} src={chat} />
           </Fade>
           <Fade left>
-               <div style={stylesDiv}>Find teacher :O</div>
+               <div style={stylesDiv}>3. Find teacher :O</div>
           </Fade>
      </div>
 }

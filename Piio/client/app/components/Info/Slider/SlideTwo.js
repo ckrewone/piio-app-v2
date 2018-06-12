@@ -21,11 +21,11 @@ const SlideTwo= (props) => {
           top: '13%',
           right: '0%',
           background: 'rgba(0,0,0,.8)',
-          height: '20vh',
-          width: '50vw',
           textAlign: 'center',
           color: '#fff',
-          fontSize: '4rem',
+          fontSize: '3rem',
+          paddingLeft: '5vw',
+          paddingRight: '5vw',
           verticalAlign: 'middle',
           lineHeight: '20vh',
           fontWeight: '300'
@@ -37,7 +37,7 @@ const SlideTwo= (props) => {
                <img style={stylesImg} src={log} />
           </Fade>
           <Fade right>
-               <div style={stylesDiv} > Log in service :P</div>
+               <div style={stylesDiv} >2. Log in service :P</div>
           </Fade>
      </div>
 }
