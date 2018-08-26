@@ -2,14 +2,18 @@ module.exports = (io) => {
 
 
   let users = [];
-  let counter = 0;
+  let counter = {};
   io.on('connection', (socket) => {
-    counter++;
     console.log('socket connected');
+
+    socket.on('join', (room) => {
+      counter[room]? counter[room]=1 : counter[room]++;
+      socket.join(room);
+    });
 
 
     socket.on('message', (data) => {
-      socket.broadcast.emit('message', {
+      socket.broadcast.to(data.room).emit('message', {
         body: data.body,
         username: data.username
       });

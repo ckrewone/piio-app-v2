@@ -7,7 +7,8 @@ import Fade from "react-reveal/Fade";
 import ReactDOM from "react-dom";
 import {getFromStorage} from "../../utils/storage";
 
-let socket = io(window.location.href.split('http://localhost:3000/room/'));
+
+const socket = io('http://localhost:3000');
 
 export default class Room extends React.Component {
   constructor(props) {
@@ -19,14 +20,9 @@ export default class Room extends React.Component {
     };
   }
 
+
   componentWillMount() {
-    socket.on('get-counter', (counter) => {
-      if (counter > 2) {
-        this.setState({isLimit: false})
-      } else {
-        this.setState({isLimit: true})
-      }
-    });
+    socket.emit('join', this.props.match.params.id);
   }
 
   componentDidMount() {
@@ -51,7 +47,8 @@ export default class Room extends React.Component {
     if (event.keyCode === 13 && body) {
       const message = {
         body,
-        username
+        username,
+        room: this.props.match.params.id
       };
       this.setState({messages: [message, ...this.state.messages]});
       socket.emit('message', message);
@@ -74,6 +71,7 @@ export default class Room extends React.Component {
     return (<div>
       <HeaderRoom/>
       <Paint
+        room={this.props.match.params.id}
       />
       <Fade>
         <div id='chat-col-2'>

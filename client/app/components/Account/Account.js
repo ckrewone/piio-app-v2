@@ -40,6 +40,7 @@ class Account extends Component {
         }
       });
     }
+    socket.emit('join',this.state.room);
     socket.on('message', message => {
       this.setState({messages: [message, ...this.state.messages]});
     });
@@ -59,6 +60,7 @@ class Account extends Component {
       const message = {
         body,
         username,
+        room: this.state.room
       };
       this.setState({messages: [message, ...this.state.messages]});
       socket.emit('message', message);

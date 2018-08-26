@@ -4,9 +4,7 @@ import Fade from 'react-reveal/Fade';
 import Paint from './PaintComp';
 import cam1 from '../../img/cam1.jpg';
 import cam2 from '../../img/cam2.jpg';
-import CallEndBtn from './CallEndBtn';
 import { Link } from 'react-router-dom';
-import Bounce from 'react-reveal/Bounce';
 
 
 class Calling extends Component{
@@ -18,7 +16,6 @@ class Calling extends Component{
 
                     <Paint />
                     <Link to='/log'>
-                         <CallEndBtn />
                     </Link>
 
                     <Fade left>
