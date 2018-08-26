@@ -21,18 +21,18 @@ class Home extends Component {
           }
           return (
 
-               <div className="return-page">
+               <div className='return-page'>
                     <Header />
-                    <div id="main">
+                    <div id='main'>
                          <Zoom>
                               <h1>
                                    <img style={imgStyle} src={img2}></img>
                               </h1>
                               <h2>
                                    <Link
-                                        className="btn btn-sample btn-lg "
-                                        role="button"
-                                        to="/more">
+                                        className='btn btn-sample btn-lg '
+                                        role='button'
+                                        to='/more'>
                                         START</Link>
                               </h2>
                          </Zoom>

@@ -22,11 +22,11 @@ const theme = createMuiTheme({
 function FloatingActionButtons(props) {
      const { classes } = props;
      return (
-          <div className ="call-button">
+          <div className ='call-button'>
                <Fade>
                <Bounce>
                     <MuiThemeProvider theme={theme}>
-                         <Button variant="fab" color="primary" aria-label="add" className={classes.button}>
+                         <Button variant='fab' color='primary' aria-label='add' className={classes.button}>
                               <AddIcon />
                          </Button>
                     </MuiThemeProvider>

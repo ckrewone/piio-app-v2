@@ -21,7 +21,7 @@ export default class Slider extends Component {
 
      render() {
           return (
-               <div className="slider">
+               <div className='slider'>
                          { this.state.slideCount === 1 ? <SlideOne /> : null}
                          { this.state.slideCount === 2 ? <SlideTwo /> : null}
                          { this.state.slideCount === 3 ? <SlideThree /> : null}

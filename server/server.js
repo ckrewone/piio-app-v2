@@ -11,7 +11,7 @@ const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const config = require('../config/config');
 const webpackConfig = require('../webpack.config');
-const io = require('socket.io').listen(http);
+const io = require('socket.io')(http);
 const isDev = process.env.NODE_ENV !== 'production';
 const port  = process.env.PORT || 3000;
 
@@ -28,6 +28,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 require('./routes')(app);
+require('./routes/api/chat')(io);
 
 if (isDev) {
      const compiler = webpack(webpackConfig);
@@ -58,50 +59,6 @@ if (isDev) {
           res.end();
      });
 }
-
-var users = [];
-
-//remove duplicate elems of array
-function removeDuplicates(arr){
-    let unique_array = []
-    for(let i = 0;i < arr.length; i++){
-        if(unique_array.indexOf(arr[i]) == -1){
-            unique_array.push(arr[i])
-        }
-    }
-    return unique_array
-}
-
-var connectedCount = 0;
-
-io.on('connection', (socket) =>{
-     socket.on('message', function(data){
-          socket.broadcast.emit('message', {
-               body: data.body,
-               username: data.username
-          });
-     });
-
-     socket.on('join', (room, callback)=>{
-          socket.join(room);
-
-     });
-
-     socket.on('send-nickname', (username)=>{
-          socket.username = username
-          users.push(socket.username)
-          users = removeDuplicates(users)
-          socket.emit('send-nickname', users)
-     });
-
-});
-
-var nsp = io.of('/info');
-nsp.on('connection', function(socket){
-  console.log('someone connected');
-});
-nsp.emit('hi', 'everyone!');
-
 
 http.listen(port, '0.0.0.0', (err) => {
      if (err) {

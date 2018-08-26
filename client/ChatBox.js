@@ -1,52 +1,29 @@
 import React, {Component} from 'react';
 import Fade from 'react-reveal/Fade';
 import ReactDOM from 'react-dom'
-import CreateRoom from './CreateRoom';
-import HeaderAccount from '../Header/HeaderAccount';
-import io from 'socket.io-client';
-import {getFromStorage} from '../../utils/storage';
 
-const socket = io('http://localhost:3000');
+const socket = this.props.socket;
 
-class Account extends Component {
+class ChatBox extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      token: '',
-      first: '',
-      last: '',
-      messages: [],
-      room: 'public'
+      messages: []
     };
   }
 
   componentDidMount() {
-    const obj = getFromStorage('the_main_app');
-    if (obj && obj.token) {
-      const {token} = obj;
-      //verify
-      fetch('api/account/verify?token=' + token)
-      .then(res => res.json())
-      .then(json => {
-        if (json.success) {
-          this.setState({
-            token,
-            first: json.first,
-            last: json.last
-          });
-          const username = this.state.first + ' ' + this.state.last;
-          socket.emit('send-nickname', username);
-        }
-      });
-    }
+    const username = this.props.first + ' ' + this.props.last;
+    socket.emit('send-nickname', username);
+
     socket.on('message', message => {
       this.setState({messages: [message, ...this.state.messages]});
     });
   }
 
   componentDidUpdate() {
-    var node = ReactDOM.findDOMNode(this.refs.index);
+    const node = ReactDOM.findDOMNode(this.refs.index);
     if (node) {
       node.scrollIntoView();
     }
@@ -54,7 +31,7 @@ class Account extends Component {
 
   handleSubmit = event => {
     const body = event.target.value;
-    const username = this.state.first + ' ' + this.state.last;
+    const username = this.props.first + ' ' + this.props.last;
     if (event.keyCode === 13 && body) {
       const message = {
         body,
@@ -65,8 +42,6 @@ class Account extends Component {
       event.target.value = '';
     }
   };
-
-
 
   render() {
     let messages = this.state.messages.map((message, index) => {
@@ -81,14 +56,8 @@ class Account extends Component {
 
     return (
       <div>
-        <HeaderAccount/>
-        <CreateRoom
-          first={this.state.first}
-          last={this.state.last}
-        />
-
         <Fade bottom>
-          <div >
+          <div>
             <div className='row'>
               <div className='col-md-3'></div>
               <div className='col-md-6' id='chat-col'>
@@ -107,4 +76,4 @@ class Account extends Component {
   }
 }
 
-export default Account;
+export default ChatBox;

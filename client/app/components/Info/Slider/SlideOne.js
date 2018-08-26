@@ -32,7 +32,7 @@ const SlideOne= (props) => {
 
 
      return (
-          <div className="slide">
+          <div className='slide'>
                <Fade>
                     <img src={reg} style={stylesImg} />
                </Fade>

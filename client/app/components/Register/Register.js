@@ -129,16 +129,16 @@ class Register extends Component {
                } else {
                     return (
 
-                         <div className="return-page">
+                         <div className='return-page'>
                               <Header />
                               <Fade>
-                                   <div className="container">
-                                        <div className="row">
-                                             <div className="col-sm-4"></div>
-                                             <div className="col-sm-4"
-                                                  id="log-box">
+                                   <div className='container'>
+                                        <div className='row'>
+                                             <div className='col-sm-4'></div>
+                                             <div className='col-sm-4'
+                                                  id='log-box'>
                                                   <div
-                                                       className="form-group">
+                                                       className='form-group'>
                                                        <p>
                                                             Sign up:
                                                        </p>
@@ -146,7 +146,7 @@ class Register extends Component {
                                                             (signUpError) ? (
                                                                  <Fade>
                                                                       <div
-                                                                           className="alert alert-danger">
+                                                                           className='alert alert-danger'>
                                                                            {signUpError}
                                                                       </div>
                                                                  </Fade>
@@ -154,39 +154,39 @@ class Register extends Component {
                                                        }
                                                        <h3>First Name:</h3>
                                                        <input
-                                                            type="text"
-                                                            placeholder="Enter your First Name"
+                                                            type='text'
+                                                            placeholder='Enter your First Name'
                                                             defaultValue={signUpFirstName}
-                                                            className="form-control"
+                                                            className='form-control'
                                                             onChange={this.onTextboxChangeSignUpFirstName} />
                                                        <br />
                                                        <h3>Last Name:</h3>
                                                        <input
-                                                            type="text"
-                                                            placeholder="Enter your Last Name"
+                                                            type='text'
+                                                            placeholder='Enter your Last Name'
                                                             defaultValue={signUpLastName}
-                                                            className="form-control"
+                                                            className='form-control'
                                                             onChange={this.onTextboxChangeSignUpLastName} />
                                                        <br />
                                                        <h3>E-mail:</h3>
                                                        <input
-                                                            type="email"
-                                                            placeholder="Enter your E-mail"
+                                                            type='email'
+                                                            placeholder='Enter your E-mail'
                                                             defaultValue={signUpEmail}
-                                                            className="form-control"
+                                                            className='form-control'
                                                             onChange={this.onTextboxChangeSignUpEmail} />
                                                        <br />
                                                        <h3>Password:</h3>
                                                        <input
-                                                            type="password"
-                                                            placeholder="Enter your Password"
+                                                            type='password'
+                                                            placeholder='Enter your Password'
                                                             defaultValue={signUpPassword}
-                                                            className="form-control"
+                                                            className='form-control'
                                                             onChange={ this.onTextboxChangeSignUpPassword} />
                                                        <br />
                                                        <button
                                                             onClick={this.onSignUp}
-                                                            className="btn btn-sample btn-lg login-button">
+                                                            className='btn btn-sample btn-lg login-button'>
                                                             Sign Up
                                                        </button>
                                                        <br />

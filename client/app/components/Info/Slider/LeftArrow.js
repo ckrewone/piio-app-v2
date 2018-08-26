@@ -10,8 +10,8 @@ const LeftArrow = (props) => {
           padding: '10px 10px 10px 10px',
      }
   return (
-    <div style={styles} onClick={props.previousSlide} className="backArrow">
-      <i className="fa fa-arrow-left fa-2x" aria-hidden="true"></i>
+    <div style={styles} onClick={props.previousSlide} className='backArrow'>
+      <i className='fa fa-arrow-left fa-2x' aria-hidden='true'></i>
     </div>
   );
 }

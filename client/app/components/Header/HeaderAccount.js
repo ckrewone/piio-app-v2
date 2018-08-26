@@ -47,7 +47,6 @@ class HeaderAccount extends Component {
           const obj = getFromStorage('the_main_app');
           if (obj && obj.token) {
                const { token } = obj;
-
                //verify
                fetch('api/account/logout?token=' + token)
                .then( res => res.json())
@@ -64,25 +63,25 @@ class HeaderAccount extends Component {
 
           return (
 
-               <nav className="navbar navbar-expand" >
+               <nav className='navbar navbar-expand' >
                     <Flip left>
-                         <li className="brand">
-                              <a><img src={img} className="App-logo"></img></a>
+                         <li className='brand'>
+                              <a><img src={img} className='App-logo'></img></a>
                          </li>
                     </Flip>
-                    <ul id="logsign" className="nav navbar-nav ml-auto">
+                    <ul id='logsign' className='nav navbar-nav ml-auto'>
                                    {
                                         (this.state.first) ? (
-                                             <li className="nav-item ">
+                                             <li className='nav-item '>
                                              <Fade right >
-                                                  <h3 className="name-tag"> Hi <span>{this.state.first}</span> <span>{this.state.last}</span> </h3>
+                                                  <h3 className='name-tag'> Hi <span>{this.state.first}</span> <span>{this.state.last}</span> </h3>
                                              </Fade>
                                              </li>
                                         ) : null
                                    }
                                    <Fade right >
-                                        <li className="nav-item">
-                                             <Link className="nav-link" onClick={this.onLogOut} to="/">Log out <i className="ion-android-arrow-forward" /></Link>
+                                        <li className='nav-item'>
+                                             <Link className='nav-link' onClick={this.onLogOut} to='/'>Log out <i className='ion-android-arrow-forward' /></Link>
                                         </li>
                                    </Fade>
                               </ul>

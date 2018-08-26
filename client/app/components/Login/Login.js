@@ -106,16 +106,16 @@ class Login extends Component {
           if(!token){
                return (
 
-                    <div className="login-page">
+                    <div className='login-page'>
                          <Header />
                          <Fade cascade>
-                              <div className="container">
-                                   <div className="row">
-                                        <div className="col-sm-4"></div>
-                                        <div className="col-sm-4"
-                                             id="log-box">
+                              <div className='container'>
+                                   <div className='row'>
+                                        <div className='col-sm-4'></div>
+                                        <div className='col-sm-4'
+                                             id='log-box'>
                                              <div
-                                                  className="form-group">
+                                                  className='form-group'>
                                                   <p>
                                                        Sign in:
                                                   </p>
@@ -124,7 +124,7 @@ class Login extends Component {
                                                        (signInError) ? (
                                                             <Fade>
                                                                  <div
-                                                                      className="alert alert-danger">
+                                                                      className='alert alert-danger'>
                                                                       {signInError}
                                                                  </div>
                                                             </Fade>
@@ -132,23 +132,23 @@ class Login extends Component {
                                                   }
                                                   <h3>E-mail:</h3>
                                                   <input
-                                                       type="email"
-                                                       placeholder="Enter your E-mail"
+                                                       type='email'
+                                                       placeholder='Enter your E-mail'
                                                        defaultValue={signInEmail}
-                                                       className="form-control"
+                                                       className='form-control'
                                                        onChange={this.onTextboxChangeSignInEmail} />
                                                   <br />
                                                   <h3>Password:</h3>
                                                   <input
-                                                       type="password"
-                                                       placeholder="Enter your Password"
+                                                       type='password'
+                                                       placeholder='Enter your Password'
                                                        defaultValue={signInPassword}
-                                                       className="form-control"
+                                                       className='form-control'
                                                        onChange={this.onTextboxChangeSignInPassword} />
                                                   <br />
                                                   <button
                                                        onClick={this.onSignIn}
-                                                       className="btn btn-sample login-button">
+                                                       className='btn btn-sample login-button'>
                                                        Sign In
                                                   </button>
                                                   <br />
