@@ -24,7 +24,7 @@ li > .nav-link {
 li >.nav-link:hover { color: rgb(142, 66, 0) !important; }
 
 li >.nav-link:before {
-     content: "";
+     content: '';
      position: absolute;
      width: 50%;
      height: 3px;

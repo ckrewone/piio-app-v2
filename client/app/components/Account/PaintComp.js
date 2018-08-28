@@ -26,7 +26,7 @@ export default class SketchExample extends Component
           const { tool, size, color, fill, fillColor, items } = this.state;
           return (
                <div>
-                    <div className="canvas">
+                    <div className='canvas'>
                          <Fade right>
                               <SketchPad
                                    animate={true}
@@ -40,8 +40,8 @@ export default class SketchExample extends Component
                          </Fade>
                     </div>
                     <Fade left>
-                         <div className="tool-box">
-                              <div className="tools" style={{marginBottom:20}}>
+                         <div className='tool-box'>
+                              <div className='tools' style={{marginBottom:20}}>
                                    <button
                                         style={tool == TOOL_PENCIL ? {fontWeight:'bold'} : undefined}
                                         className={tool == TOOL_PENCIL  ? ' btn btn-sm item-active' : ' btn btn-sm item'}
@@ -65,22 +65,22 @@ export default class SketchExample extends Component
                                         onClick={() => this.setState({tool:TOOL_RECTANGLE})}
                                         >Rectangle</button>
                               </div>
-                              <div className="options" style={{marginBottom:20}}>
-                                   <label htmlFor="">size: </label><br />
-                                   <input className="input-range" min="1" max="20" type="range" value={size} onChange={(e) => this.setState({size: parseInt(e.target.value)})} />
+                              <div className='options' style={{marginBottom:20}}>
+                                   <label htmlFor=''>size: </label><br />
+                                   <input className='input-range' min='1' max='20' type='range' value={size} onChange={(e) => this.setState({size: parseInt(e.target.value)})} />
                               </div>
-                              <div className="options" style={{marginBottom:20}}>
-                                   <label htmlFor="">color: </label>
-                                   <input type="color" value={color} onChange={(e) => this.setState({color: e.target.value})} />
+                              <div className='options' style={{marginBottom:20}}>
+                                   <label htmlFor=''>color: </label>
+                                   <input type='color' value={color} onChange={(e) => this.setState({color: e.target.value})} />
                               </div>
                               {(this.state.tool == TOOL_ELLIPSE || this.state.tool == TOOL_RECTANGLE) ?
                                    <div>
-                                        <label htmlFor="">fill in: </label>
-                                        <input type="checkbox" value={fill} style={{margin:'0 8'}}
+                                        <label htmlFor=''>fill in: </label>
+                                        <input type='checkbox' value={fill} style={{margin:'0 8'}}
                                              onChange={(e) => this.setState({fill: e.target.checked})} />
                                         {fill ? <span>
-                                             <label htmlFor="">with color:</label>
-                                             <input type="color" value={fillColor} onChange={(e) => this.setState({fillColor: e.target.value})} />
+                                             <label htmlFor=''>with color:</label>
+                                             <input type='color' value={fillColor} onChange={(e) => this.setState({fillColor: e.target.value})} />
                                         </span> : ''}
                                    </div> : ''}
                               </div>

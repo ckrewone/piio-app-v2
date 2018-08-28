@@ -31,7 +31,7 @@ const SlideTwo= (props) => {
      }
 
 
-     return <div className="slide">
+     return <div className='slide'>
           <Fade >
                <img style={stylesImg} src={log} />
           </Fade>

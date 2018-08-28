@@ -31,7 +31,7 @@ const SlideFour= (props) => {
      }
 
 
-     return <div className="slide" style={{ overflowX : 'hidden'}}>
+     return <div className='slide' style={{ overflowX : 'hidden'}}>
           <Fade >
                <img src={ex} style={stylesImg} />
           </Fade>
