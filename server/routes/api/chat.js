@@ -8,7 +8,8 @@ module.exports = (io) => {
 
 
     socket.on('addItem', (data) => {
-      socket.broadcast.emit('addItem', data);
+      console.log(data.room);
+      socket.broadcast.to(data.room).emit('addItem', data);
     });
 
     socket.on('join', (room) => {

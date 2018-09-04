@@ -27,7 +27,7 @@ export default class CreateRoom extends React.Component {
       <div>
         <div className='row'>
           <div className='col-md-3'></div>
-          <Fade bottom>
+          <Fade>
             <div className='col-md-6' id='create-room'>
               <h2>Create or Join room</h2>
               <input className='form-control' type='text' placeholder='Enter room name'
