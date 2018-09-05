@@ -6,6 +6,12 @@ module.exports = (io) => {
   io.on('connection', (socket) => {
     console.log('socket connected');
 
+
+    socket.on('addItem', (data) => {
+      console.log(data.room);
+      socket.broadcast.to(data.room).emit('addItem', data);
+    });
+
     socket.on('join', (room) => {
       counter[room]? counter[room]=1 : counter[room]++;
       socket.join(room);

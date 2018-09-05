@@ -89,7 +89,7 @@ class Account extends Component {
           last={this.state.last}
         />
 
-        <Fade bottom>
+        <Fade>
           <div >
             <div className='row'>
               <div className='col-md-3'></div>
