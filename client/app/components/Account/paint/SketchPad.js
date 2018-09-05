@@ -110,8 +110,8 @@ export default class SketchPad extends Component {
     const {canvasClassName} = this.props;
     return (
       <canvas
-          width={window.innerWidth*80/100}
-          height={window.innerHeight*68/100}
+          width={window.innerWidth*(10/12)-20}
+          height={window.innerHeight*60/100}
         ref={(canvas) => { this.canvasRef = canvas; }}
         className={canvasClassName}
         onMouseDown={this.onMouseDown}

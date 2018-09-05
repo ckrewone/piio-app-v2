@@ -74,13 +74,16 @@ export default class Room extends React.Component {
         room={this.props.match.params.id}
       />
       <Fade>
-        <div id='chat-col-2'>
+        <div className="row">
+          <div className='col-md-1'></div>
+          <div className='col-md-10' id='chat-col-2'>
           <h1>Priv chat: </h1>
           <div className='myclassname-2'>
             {messages}
           </div>
           <input type='text' className='form-control' placeholder='Enter a message...'
                  onKeyUp={this.handleSubmit}></input>
+          </div>
         </div>
       </Fade>
 
