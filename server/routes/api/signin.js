@@ -27,25 +27,25 @@ module.exports = (app) => {
           if(!firstName){
                return res.send({
                     success: false,
-                    message: 'First name cannot be blank!'
+                    message: 'Imię nie może być puste!'
                });
           }
           if(!lastName){
                return res.send({
                     success: false,
-                    message: 'Last name cannot be blank!'
+                    message: 'Nazwisko nie może być puste!'
                });
           }
           if(!email){
                return res.send({
                     success: false,
-                    message: 'E-mail cannot be blank!'
+                    message: 'E-mail nie może być pusty!'
                });
           }
           if(!password){
                return res.send({
                     success: false,
-                    message: 'Password cannot be blank!'
+                    message: 'Nieprawidłowe hasło!'
                });
           }
 
@@ -62,7 +62,7 @@ module.exports = (app) => {
                } else if(previousUsers.lenght > 0){
                     return res.send({
                          success: false,
-                         message: 'This user does exist!'
+                         message: 'Użytkownik istnieje!'
                     });
                }
 
@@ -81,7 +81,7 @@ module.exports = (app) => {
                     }
                     return res.send({
                          success: true,
-                         message: 'Success! You are sing up :D'
+                         message: 'Sukces!'
                     });
                });
           });
@@ -99,13 +99,13 @@ module.exports = (app) => {
           if(!email){
                return res.send({
                     success: false,
-                    message: 'Wrong E-mail!'
+                    message: 'Nieprawidłowy E-mail!'
                });
           }
           if(!password){
                return res.send({
                     success: false,
-                    message: 'Invalid Password!'
+                    message: 'Nieprawidłowe hasło!'
                });
           }
 
@@ -125,7 +125,7 @@ module.exports = (app) => {
                if(num != 1){
                     return res.send({
                          success: false,
-                         message: 'Invalid user!'
+                         message: 'Zły użytkownik!'
                     });
                }
 
@@ -133,7 +133,7 @@ module.exports = (app) => {
                if(!user.validPassword(password)){
                     return res.send({
                          success: false,
-                         message: 'Invalid Password!'
+                         message: 'Złe hasło!'
                     });
                }
 
@@ -148,7 +148,7 @@ module.exports = (app) => {
                     }
                     return res.send({
                          success: true,
-                         message: 'Valid sign in',
+                         message: 'Sukces',
                          token: doc._id,
                     });
                });
@@ -173,7 +173,7 @@ module.exports = (app) => {
                if (Object.keys(sessions).length != 1){
                     return res.send({
                          success: false,
-                         message: 'Invalid token!'
+                         message: 'Zły token!'
                     });
                } else {
                     const session = sessions[0];
@@ -223,7 +223,7 @@ module.exports = (app) => {
 
                return res.send({
                     success: true,
-                    message: 'Logout'
+                    message: 'Wylogowano'
                });
 
           });

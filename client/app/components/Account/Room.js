@@ -81,7 +81,7 @@ export default class Room extends React.Component {
           <div className='myclassname-2'>
             {messages}
           </div>
-          <input type='text' className='form-control' placeholder='Enter a message...'
+          <input type='text' className='form-control' placeholder='Napisz wiadomość..'
                  onKeyUp={this.handleSubmit}></input>
           </div>
         </div>
