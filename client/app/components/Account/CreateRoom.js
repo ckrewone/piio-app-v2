@@ -30,7 +30,7 @@ export default class CreateRoom extends React.Component {
           <Fade>
             <div className='col-md-6' id='create-room'>
               <h2>Create or Join room</h2>
-              <input className='form-control' type='text' placeholder='Enter room name'
+              <input className='form-control' type='text' placeholder='Wprowadź nazwę pokoju'
                      onChange={this.handleChange}/>
               <Link
                 to={{
@@ -38,7 +38,7 @@ export default class CreateRoom extends React.Component {
                   state: this.props
                 }}
                 className={this.state.room ? 'btn btn-sample' : 'btn btn-sample disabled'}>
-                Join!
+                Dołącz do pokoju
               </Link>
             </div>
           </Fade>

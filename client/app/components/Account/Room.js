@@ -8,7 +8,7 @@ import ReactDOM from "react-dom";
 import {getFromStorage} from "../../utils/storage";
 
 
-const socket = io('http://localhost:3000');
+const socket = io('http://80.211.180.21:3000');
 
 export default class Room extends React.Component {
   constructor(props) {
@@ -27,7 +27,6 @@ export default class Room extends React.Component {
 
   componentDidMount() {
     const username = this.props.location.state.first + ' ' + this.props.location.state.last;
-    console.log(username);
     socket.emit('send-nickname', username);
     socket.on('message', message => {
       this.setState({messages: [message, ...this.state.messages]});
@@ -81,7 +80,7 @@ export default class Room extends React.Component {
           <div className='myclassname-2'>
             {messages}
           </div>
-          <input type='text' className='form-control' placeholder='Enter a message...'
+          <input type='text' className='form-control' placeholder='Napisz wiadomość..'
                  onKeyUp={this.handleSubmit}></input>
           </div>
         </div>

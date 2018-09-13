@@ -54,14 +54,14 @@ class HeaderRoom extends Component {
             (this.state.first) ? (
               <li className='nav-item '>
                 <Fade right>
-                  <h3 className='name-tag'> Hi <span>{this.state.first}</span> <span>{this.state.last}</span></h3>
+                  <h3 className='name-tag'>Cześć <span>{this.state.first}</span> <span>{this.state.last}</span></h3>
                 </Fade>
               </li>
             ) : null
           }
           <Fade right>
             <li className='nav-item'>
-              <Link className='nav-link' to='/log'>Leave Room <i className='ion-android-arrow-forward'/></Link>
+              <Link className='nav-link' to='/log'>Opuść pokój<i className='ion-android-arrow-forward'/></Link>
             </li>
           </Fade>
         </ul>

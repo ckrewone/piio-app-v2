@@ -4,11 +4,8 @@ module.exports = (io) => {
   let users = [];
   let counter = {};
   io.on('connection', (socket) => {
-    console.log('socket connected');
-
 
     socket.on('addItem', (data) => {
-      console.log(data.room);
       socket.broadcast.to(data.room).emit('addItem', data);
     });
 
