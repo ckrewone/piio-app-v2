@@ -63,12 +63,12 @@ export default class SketchExample extends Component {
                     }}>
                     <Icon size={32} icon={ic_crop_din} onClick={() => this.setState({tool: TOOL_RECTANGLE})}/></div>
                   <div className='options'>
-                    <label htmlFor='' style={{fontSize: "15"}}>SIZE</label><br/>
+                    <label htmlFor='' style={{fontSize: "15"}}>ROZMIAR</label><br/>
                     <input id='size-range' orient="vertical" className='input-range' min='1' max='20' type='range' value={size}
                            onChange={(e) => this.setState({size: parseInt(e.target.value)})}/>
                   </div>
                   <div className='options'>
-                    <label htmlFor='' style={{fontSize: "15"}}>COLOR</label>
+                    <label htmlFor='' style={{fontSize: "15"}}>KOLOR</label>
                     <input type='color' value={color} onChange={(e) => this.setState({color: e.target.value})}/>
                   </div>
                 </div>
