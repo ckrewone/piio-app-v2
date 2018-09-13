@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {SketchPad, TOOL_PENCIL, TOOL_LINE, TOOL_RECTANGLE, TOOL_ELLIPSE} from './paint';
+import {SketchPad, TOOL_ELLIPSE, TOOL_LINE, TOOL_PENCIL, TOOL_RECTANGLE} from './paint';
 import Fade from 'react-reveal/Fade';
 import {pencil} from 'react-icons-kit/fa/pencil'
 import {minus} from 'react-icons-kit/fa/minus'
@@ -12,7 +12,7 @@ import {Icon} from 'react-icons-kit'
 
 import io from 'socket.io-client';
 
-const wsClient = io('http://localhost:3000');
+const wsClient = io('http://80.211.180.21:3000');
 
 
 export default class SketchExample extends Component {
@@ -64,7 +64,7 @@ export default class SketchExample extends Component {
                     <Icon size={32} icon={ic_crop_din} onClick={() => this.setState({tool: TOOL_RECTANGLE})}/></div>
                   <div className='options'>
                     <label htmlFor='' style={{fontSize: "15"}}>SIZE</label><br/>
-                    <input id='size-range' className='input-range' min='1' max='20' type='range' value={size}
+                    <input id='size-range' orient="vertical" className='input-range' min='1' max='20' type='range' value={size}
                            onChange={(e) => this.setState({size: parseInt(e.target.value)})}/>
                   </div>
                   <div className='options'>

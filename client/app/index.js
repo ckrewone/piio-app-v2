@@ -14,7 +14,6 @@ import Home from './components/Home/Home';
 import Login from './components/Login/Login';
 import Info from './components/Info/Info';
 import Details from './components/Info/Details';
-import Calling from './components/Account/Calling'
 import Room from './components/Account/Room';
 
 import './styles/styles.scss';
@@ -26,7 +25,6 @@ render((
         <Route exact path='/' component={Home}/>
         <Route path='/log' component={Login}/>
         <Route path='/reg' component={Register}/>
-        <Route path='/cams' component={Calling}/>
         <Route path='/more' component={Info}/>
         <Route path='/moremore' component={Details}/>
         <Route path='/room/:id' component={Room}/>
