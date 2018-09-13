@@ -6,7 +6,7 @@ import HeaderAccount from '../Header/HeaderAccount';
 import io from 'socket.io-client';
 import {getFromStorage} from '../../utils/storage';
 
-const socket = io('http://localhost:3000');
+const socket = io('http://80.211.180.21:3000');
 
 class Account extends Component {
   constructor(props) {
