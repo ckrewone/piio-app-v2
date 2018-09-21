@@ -692,6 +692,38 @@ canvas {
 
 }
 
+.next-arrow {
+  position: absolute;
+  right: 20vw;
+  top: 50%;
+  background: rgba(255,255,255,.3);
+  border-radius: 3px;
+  padding: 10px 10px 10px 10px;
+  transition: all 0.2s;
+}
+
+.next-arrow:hover {
+  background: rgba(255,255,255,1);
+  border-radius: 14px;
+}
+
+
+.prev-arrow {
+  position: absolute;
+  left: 20vw;
+  top: 50%;
+  background: rgba(255,255,255,.3);
+  border-radius: 3px;
+  padding: 10px 10px 10px 10px;
+  transition: all 0.2s;
+}
+
+.prev-arrow:hover {
+  background: rgba(255,255,255,1);
+  border-radius: 14px;
+}
+
+
 .call-end-button {
   position: absolute;
   bottom: 26vh;
