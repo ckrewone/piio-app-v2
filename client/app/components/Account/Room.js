@@ -76,7 +76,7 @@ export default class Room extends React.Component {
         <div className="row">
           <div className='col-md-1'></div>
           <div className='col-md-10' id='chat-col-2'>
-          <h1>Priv chat: </h1>
+          <h1>Czat pokoju: </h1>
           <div className='myclassname-2'>
             {messages}
           </div>

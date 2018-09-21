@@ -94,7 +94,7 @@ class Account extends Component {
             <div className='row'>
               <div className='col-md-3'></div>
               <div className='col-md-6' id='chat-col'>
-                <h1>Chat: </h1>
+                <h1>Czat: </h1>
                 <div className='myclassname'>
                   {messages}
                 </div>
