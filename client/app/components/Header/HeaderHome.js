@@ -17,7 +17,7 @@ class Header extends Component {
                     <Fade right >
                          <ul id='logsign' className='nav navbar-nav ml-auto'>
                               <li className='nav-item'>
-                                   <Link className='nav-link' to='/log'>Logowanie<i className='ion-android-arrow-forward' /></Link>
+                                   <Link className='nav-link' to='/log'>Zaloguj <i className='ion-android-arrow-forward' /></Link>
                               </li>
                               <li className='nav-item'>
                                    <Link className='nav-link' to='/reg'>Rejestracja<i className='ion-android-arrow-forward' /></Link>
