@@ -3,8 +3,7 @@ import Header from '../Header/HeaderHome';
 import 'whatwg-fetch';
 import {Link} from 'react-router-dom';
 import Zoom from 'react-reveal/Zoom';
-import img from '../../img/name2.png';
-import img2 from '../../img/logo.svg';
+import img from '../../img/logo.svg';
 
 class Home extends Component {
 
@@ -25,7 +24,7 @@ class Home extends Component {
         <div id='main'>
           <Zoom>
             <h1>
-              <img style={imgStyle} src={img2}></img>
+              <img style={imgStyle} src={img}></img>
             </h1>
             <h2>
               <Link

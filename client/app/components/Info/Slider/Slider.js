@@ -5,7 +5,6 @@ import SlideThree from './SlideThree';
 import SlideFour from './SlideFour';
 import RightArrow from './RightArrow';
 import LeftArrow from './LeftArrow';
-import Fade from 'react-reveal/Fade';
 
 export default class Slider extends Component {
      constructor(props) {
