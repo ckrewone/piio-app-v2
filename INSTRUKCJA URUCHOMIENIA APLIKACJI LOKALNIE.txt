@@ -1,0 +1,7 @@
+1. Pobieramy i instalujemy:
+-Node.js
+-MongoDB (po instalacji Mongo tworzymy foldery C:/data/db i pozostawiamy puste)
+2. Uruchamiamy mongodb.exe (domyœlna lokalizacja C:\Program Files\MongoDB\Server\4.0\bin)
+3. Uruchamiamy wiersz poleceñ w folderze PiioAppV2
+4. Wpisujemy "npm start"
+5. Po za³adowaniu aplikacji uruchamiamy przegl¹darkê na adresie http://localhost:3000

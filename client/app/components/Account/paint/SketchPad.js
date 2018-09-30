@@ -1,12 +1,23 @@
 import React, {Component, PropTypes} from 'react';
 import { findDOMNode } from 'react-dom'
-import { Pencil, TOOL_PENCIL, Line, TOOL_LINE, Ellipse, TOOL_ELLIPSE, Rectangle, TOOL_RECTANGLE } from './tools'
+import {
+  Pencil,
+  TOOL_PENCIL,
+  Line,
+  TOOL_LINE,
+  Ellipse,
+  TOOL_ELLIPSE,
+  Rectangle,
+  TOOL_RECTANGLE,
+  TOOL_ERASE, Erase
+} from './tools'
 
 export const toolsMap = {
   [TOOL_PENCIL]: Pencil,
   [TOOL_LINE]: Line,
   [TOOL_RECTANGLE]: Rectangle,
-  [TOOL_ELLIPSE]: Ellipse
+  [TOOL_ELLIPSE]: Ellipse,
+[TOOL_ERASE]: Erase
 };
 
 export default class SketchPad extends Component {
@@ -92,6 +103,7 @@ export default class SketchPad extends Component {
   onMouseUp(e) {
     const data = this.tool.onMouseUp(...this.getCursorPosition(e));
     data && data[0] && this.props.onCompleteItem && this.props.onCompleteItem.apply(null, data);
+    console.log(data);
     if (this.props.onDebouncedItemChange) {
       clearInterval(this.interval);
       this.interval = null;

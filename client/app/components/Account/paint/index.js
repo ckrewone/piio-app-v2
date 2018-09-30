@@ -12,5 +12,7 @@ export {
   Ellipse,
   TOOL_ELLIPSE,
   Rectangle,
-  TOOL_RECTANGLE
+  TOOL_RECTANGLE,
+  Erase,
+  TOOL_ERASE
 } from './tools';

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {SketchPad, TOOL_ELLIPSE, TOOL_LINE, TOOL_PENCIL, TOOL_RECTANGLE} from './paint';
+import {SketchPad, TOOL_ELLIPSE, TOOL_ERASE, TOOL_LINE, TOOL_PENCIL, TOOL_RECTANGLE} from './paint';
 import Fade from 'react-reveal/Fade';
 import {pencil} from 'react-icons-kit/fa/pencil'
 import {minus} from 'react-icons-kit/fa/minus'
@@ -7,6 +7,7 @@ import {squareO} from 'react-icons-kit/fa/squareO'
 import {ic_crop_din} from 'react-icons-kit/md/ic_crop_din'
 import {circleO} from 'react-icons-kit/fa/circleO'
 import {circle} from 'react-icons-kit/fa/circle'
+import {eraser} from 'react-icons-kit/fa/eraser'
 
 import {Icon} from 'react-icons-kit'
 
@@ -62,6 +63,12 @@ export default class SketchExample extends Component {
                       margin: "auto"
                     }}>
                     <Icon size={32} icon={ic_crop_din} onClick={() => this.setState({tool: TOOL_RECTANGLE})}/></div>
+                  <div
+                    style={tool == TOOL_ERASE ? {color: '#C96218', margin: "auto"} : {
+                      color: '#fff',
+                      margin: "auto"
+                    }}>
+                    <Icon size={32} icon={eraser} onClick={() => this.setState({tool: TOOL_ERASE})}/></div>
                   <div className='options'>
                     <label htmlFor='' style={{fontSize: "15"}}>ROZMIAR</label><br/>
                     <input id='size-range' orient="vertical" className='input-range' min='1' max='20' type='range' value={size}
