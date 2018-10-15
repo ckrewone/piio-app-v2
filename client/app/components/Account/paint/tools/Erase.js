@@ -10,14 +10,13 @@ export default (context) => {
     stroke = {
       id: v4(),
       tool: TOOL_ERASE,
-      color,
       size,
       points: [{ x, y }]
     };
     return [stroke];
   };
 
-  const drawLine = (item, start, { x, y }) => {
+  const drawLine = () => {
     context.save();
     context.beginPath();
     context.fillStyle = "#FFFFFF";
@@ -25,12 +24,10 @@ export default (context) => {
   };
 
   const onMouseMove = (x, y) => {
-    if (!stroke) return [];
     const newPoint = { x, y };
-    const start = stroke.points.slice(-1)[0];
-    drawLine(stroke, start, newPoint);
+    stroke.points.slice(-1)[0];
+    drawLine();
     stroke.points.push(newPoint);
-    points.push(newPoint);
 
     return [stroke];
   };
@@ -42,28 +39,13 @@ export default (context) => {
   };
 
   const onMouseUp = (x, y) => {
-    if (!stroke) return;
     onMouseMove(x, y);
-    points = [];
     const item = stroke;
-    stroke = null;
     return [item];
   };
 
-  const draw = (item, animate) => {
-    let time = 0;
-    let i = 0;
-    const j = item.points.length;
-    for (i, j; i < j; i++) {
-      if (!item.points[i - 1]) continue;
-      if (animate) {
-        setTimeout(drawLine.bind(null, item, item.points[i - 1], item.points[i]), time);
-        time += 10;
-      } else {
-        drawLine(item, item.points[i - 1], item.points[i]);
-      }
-    }
-  };
+  const draw = () => drawLine();
+
 
   return {
     onMouseDown,

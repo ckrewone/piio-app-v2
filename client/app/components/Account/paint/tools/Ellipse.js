@@ -20,21 +20,6 @@ export default (context) => {
     return [ellipse];
   };
 
-  const drawEllipsePolifyll = (centerX, centerY, radiusX, radiusY) => {
-    let xPos;
-    let yPos;
-    let i = 0;
-    for (i; i < 2 * Math.PI; i += 0.01) {
-      xPos = centerX - (radiusY * Math.sin(i)) * Math.sin(0) + (radiusX * Math.cos(i)) * Math.cos(0);
-      yPos = centerY + (radiusX * Math.cos(i)) * Math.sin(0) + (radiusY * Math.sin(i)) * Math.cos(0);
-      if (i === 0) {
-        context.moveTo(xPos, yPos);
-      } else {
-        context.lineTo(xPos, yPos);
-      }
-    }
-  };
-
   const drawEllipse = (item, mouseX, mouseY) => {
     const startX = mouseX < item.start.x ? mouseX : item.start.x;
     const startY = mouseY < item.start.y ? mouseY : item.start.y;
@@ -51,11 +36,8 @@ export default (context) => {
     context.strokeStyle = item.color;
     context.fillStyle = item.fill;
 
-    if (typeof context.ellipse === 'function') {
-      context.ellipse(centerX, centerY, radiusX, radiusY, 0, 0, 2 * Math.PI);
-    } else {
-      drawEllipsePolifyll(centerX, centerY, radiusX, radiusY);
-    }
+    context.ellipse(centerX, centerY, radiusX, radiusY, 0, 0, 2 * Math.PI);
+
     context.stroke();
     if (item.fill) context.fill();
     context.closePath();

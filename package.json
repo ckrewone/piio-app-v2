@@ -31,7 +31,8 @@
     "react-icons-kit": "^1.1.7",
     "socket.io": "^2.1.1",
     "socket.io-client": "^2.1.1",
-    "whatwg-fetch": "^2.0.4"
+    "whatwg-fetch": "^2.0.4",
+    "uuid": "latest"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
