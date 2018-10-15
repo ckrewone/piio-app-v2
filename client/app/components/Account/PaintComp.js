@@ -8,6 +8,10 @@ import {ic_crop_din} from 'react-icons-kit/md/ic_crop_din'
 import {circleO} from 'react-icons-kit/fa/circleO'
 import {circle} from 'react-icons-kit/fa/circle'
 import {eraser} from 'react-icons-kit/fa/eraser'
+import {fileO} from 'react-icons-kit/fa/fileO'
+import {remove} from 'react-icons-kit/fa/remove'
+import {longArrowRight} from 'react-icons-kit/fa/longArrowRight'
+
 
 import {Icon} from 'react-icons-kit'
 
@@ -49,29 +53,55 @@ export default class SketchExample extends Component {
             <Fade left>
               <div className='tool-box'>
                 <div className='tools' style={{textAlign: 'center'}}>
-                  <div
-                    style={tool == TOOL_PENCIL ? {color: '#C96218', margin: "auto"} : {color: '#fff', margin: "auto"}}>
+                  <div className='icon-box'
+                       style={tool == TOOL_PENCIL ? {
+                         transform: "scale(-1, 1)",
+                         color: '#C96218',
+                         margin: "auto"
+                       } : {
+                         color: '#fff',
+                         margin: "auto"
+                       }}>
                     <Icon size={32} icon={pencil} onClick={() => this.setState({tool: TOOL_PENCIL})}/></div>
-                  <div style={tool == TOOL_LINE ? {color: '#C96218', margin: "auto"} : {color: '#fff', margin: "auto"}}>
-                    <Icon size={32} icon={minus} onClick={() => this.setState({tool: TOOL_LINE})}/></div>
                   <div
-                    style={tool == TOOL_ELLIPSE ? {color: '#C96218', margin: "auto"} : {color: '#fff', margin: "auto"}}>
+                    className='icon-box'
+                    style={tool == TOOL_ELLIPSE ? {
+                      transform: "scale(-1, 1)",
+                      color: '#C96218',
+                      margin: "auto"
+                    } : {color: '#fff', margin: "auto"}}>
                     <Icon size={32} icon={circleO} onClick={() => this.setState({tool: TOOL_ELLIPSE})}/></div>
                   <div
-                    style={tool == TOOL_RECTANGLE ? {color: '#C96218', margin: "auto"} : {
-                      color: '#fff',
-                      margin: "auto"
-                    }}>
+                    className='icon-box' style={tool == TOOL_RECTANGLE ? {
+                    transform: "scale(-1, 1)",
+                    color: '#C96218',
+                    margin: "auto"
+                  } : {
+                    color: '#fff',
+                    margin: "auto"
+                  }}>
                     <Icon size={32} icon={ic_crop_din} onClick={() => this.setState({tool: TOOL_RECTANGLE})}/></div>
+                  <div className='icon-box' style={tool == TOOL_LINE ? {
+                    transform: "scale(-1, 1)",
+                    color: '#C96218',
+                    margin: "auto"
+                  } : {color: '#fff', margin: "auto"}}>
+                    <Icon size={32} icon={longArrowRight}
+                          onClick={() => this.setState({tool: TOOL_LINE})}/></div>
                   <div
-                    style={tool == TOOL_ERASE ? {color: '#C96218', margin: "auto"} : {
-                      color: '#fff',
-                      margin: "auto"
-                    }}>
-                    <Icon size={32} icon={eraser} onClick={() => this.setState({tool: TOOL_ERASE})}/></div>
+                    className='icon-box' style={tool == TOOL_ERASE ? {
+                    transform: "scale(-1, 1)",
+                    color: '#C96218',
+                    margin: "auto"
+                  } : {
+                    color: '#fff',
+                    margin: "auto"
+                  }}>
+                    <Icon size={32} icon={fileO} onClick={() => this.setState({tool: TOOL_ERASE})}/></div>
                   <div className='options'>
                     <label htmlFor='' style={{fontSize: "15"}}>ROZMIAR</label><br/>
-                    <input id='size-range' orient="vertical" className='input-range' min='1' max='20' type='range' value={size}
+                    <input id='size-range' orient="vertical" className='input-range' min='1' max='20' type='range'
+                           value={size}
                            onChange={(e) => this.setState({size: parseInt(e.target.value)})}/>
                   </div>
                   <div className='options'>

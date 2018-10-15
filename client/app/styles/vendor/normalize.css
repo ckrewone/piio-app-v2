@@ -736,3 +736,10 @@ canvas {
   bottom: 29vh;
   left: 1%;
 }
+
+.icon-box{
+  transition:all 500ms ease;
+  border-radius: 12px;
+  height: 50px;
+  width: 50px;
+}
