@@ -21,6 +21,11 @@ mongoose.connect(isDev ? config.db_dev : config.db, {
 });
 mongoose.Promise = global.Promise;
 
+app.get('*.js', function (req, res, next) {
+  req.url = req.url + '.gz';
+  res.set('Content-Encoding', 'gzip');
+  next();
+});
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
