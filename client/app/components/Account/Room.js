@@ -1,17 +1,15 @@
 import React from 'react';
-import {Link} from "react-router-dom";
 import io from 'socket.io-client';
 import HeaderRoom from '../Header/HeaderRoom';
 import Paint from './PaintComp';
 import Fade from "react-reveal/Fade";
 import ReactDOM from "react-dom";
-import {getFromStorage} from "../../utils/storage";
 
 
 const socket = io('http://80.211.180.21:3000');
 
 export default class Room extends React.Component {
-  constructor(props) {
+  constructor() {
     super();
     this.state = {
       room: '',
@@ -76,12 +74,12 @@ export default class Room extends React.Component {
         <div className="row">
           <div className='col-md-1'></div>
           <div className='col-md-10' id='chat-col-2'>
-          <h1>Czat pokoju: </h1>
-          <div className='myclassname-2'>
-            {messages}
-          </div>
-          <input type='text' className='form-control' placeholder='Napisz wiadomość..'
-                 onKeyUp={this.handleSubmit}></input>
+            <h1>Czat pokoju: </h1>
+            <div className='myclassname-2'>
+              {messages}
+            </div>
+            <input type='text' className='form-control' placeholder='Napisz wiadomość..'
+                   onKeyUp={this.handleSubmit}></input>
           </div>
         </div>
       </Fade>

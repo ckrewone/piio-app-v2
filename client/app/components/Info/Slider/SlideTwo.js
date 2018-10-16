@@ -3,7 +3,7 @@ import log from '../../../img/log.jpg';
 import Fade from 'react-reveal/Fade';
 
 
-const SlideTwo = (props) => {
+const SlideTwo = () => {
 
 
   let stylesImg = {

@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import 'whatwg-fetch';
 import Header from '../Header/Header';
 import Fade from 'react-reveal/Fade';
-import {Link} from 'react-router-dom';
 import Account from '../Account/Account'
 import {
   getFromStorage,

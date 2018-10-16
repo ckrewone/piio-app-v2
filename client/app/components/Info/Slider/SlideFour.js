@@ -2,7 +2,7 @@ import React from 'react';
 import ex from '../../../img/ex.jpg';
 import Fade from 'react-reveal/Fade';
 
-const SlideFour = (props) => {
+const SlideFour = () => {
 
 
   let stylesImg = {

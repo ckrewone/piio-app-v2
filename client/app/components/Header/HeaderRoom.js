@@ -5,7 +5,6 @@ import Flip from 'react-reveal/Flip';
 import Fade from 'react-reveal/Fade';
 import {
   getFromStorage,
-  setInStorage,
 } from '../../utils/storage';
 
 class HeaderRoom extends Component {

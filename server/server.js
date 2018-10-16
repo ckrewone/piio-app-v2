@@ -13,59 +13,57 @@ const config = require('../config/config');
 const webpackConfig = require('../webpack.config');
 const io = require('socket.io')(http);
 const isDev = process.env.NODE_ENV !== 'production';
-const port  = process.env.PORT || 3000;
-
-
+const port = process.env.PORT || 3000;
 
 
 mongoose.connect(isDev ? config.db_dev : config.db, {
-     useMongoClient: true,
+  useMongoClient: true,
 });
 mongoose.Promise = global.Promise;
 
 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 require('./routes')(app);
 require('./routes/api/chat')(io);
 
 if (isDev) {
-     const compiler = webpack(webpackConfig);
+  const compiler = webpack(webpackConfig);
 
-     app.use(historyApiFallback({
-          verbose: false
-     }));
+  app.use(historyApiFallback({
+    verbose: false
+  }));
 
-     app.use(webpackDevMiddleware(compiler, {
-          publicPath: webpackConfig.output.publicPath,
-          contentBase: path.resolve(__dirname, '../client/public'),
-          stats: {
-               colors: true,
-               hash: false,
-               timings: true,
-               chunks: false,
-               chunkModules: false,
-               modules: false
-          }
-     }));
+  app.use(webpackDevMiddleware(compiler, {
+    publicPath: webpackConfig.output.publicPath,
+    contentBase: path.resolve(__dirname, '../client/public'),
+    stats: {
+      colors: true,
+      hash: false,
+      timings: true,
+      chunks: false,
+      chunkModules: false,
+      modules: false
+    }
+  }));
 
-     app.use(webpackHotMiddleware(compiler));
-     app.use(express.static(path.resolve(__dirname, '../dist')));
+  app.use(webpackHotMiddleware(compiler));
+  app.use(express.static(path.resolve(__dirname, '../dist')));
 } else {
-     app.use(express.static(path.resolve(__dirname, '../dist')));
-     app.get('*', function (req, res) {
-          res.sendFile(path.resolve(__dirname, '../dist/index.html'));
-          res.end();
-     });
+  app.use(express.static(path.resolve(__dirname, '../dist')));
+  app.get('*', function (req, res) {
+    res.sendFile(path.resolve(__dirname, '../dist/index.html'));
+    res.end();
+  });
 }
 
 http.listen(port, '0.0.0.0', (err) => {
-     if (err) {
-          console.log(err);
-     }
+  if (err) {
+    console.log(err);
+  }
 
-     console.info('Server started, open http://localhost:%s/ in your browser.', port);
+  console.info('Server started, open http://localhost:%s/ in your browser.', port);
 });
 
 module.exports = app;

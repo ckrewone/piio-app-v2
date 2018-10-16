@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import Fade from 'react-reveal/Fade';
 
 export default class CreateRoom extends React.Component {
-  constructor(props) {
+  constructor() {
     super();
     this.state = {
       room: '',

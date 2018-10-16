@@ -2,17 +2,10 @@ import React, {Component} from 'react';
 import {SketchPad, TOOL_ELLIPSE, TOOL_ERASE, TOOL_LINE, TOOL_PENCIL, TOOL_RECTANGLE} from './paint';
 import Fade from 'react-reveal/Fade';
 import {pencil} from 'react-icons-kit/fa/pencil'
-import {minus} from 'react-icons-kit/fa/minus'
-import {squareO} from 'react-icons-kit/fa/squareO'
 import {ic_crop_din} from 'react-icons-kit/md/ic_crop_din'
 import {circleO} from 'react-icons-kit/fa/circleO'
-import {circle} from 'react-icons-kit/fa/circle'
-import {eraser} from 'react-icons-kit/fa/eraser'
 import {fileO} from 'react-icons-kit/fa/fileO'
-import {remove} from 'react-icons-kit/fa/remove'
 import {longArrowRight} from 'react-icons-kit/fa/longArrowRight'
-
-
 import {Icon} from 'react-icons-kit'
 
 import io from 'socket.io-client';
@@ -21,7 +14,6 @@ const wsClient = io('http://80.211.180.21:3000');
 
 
 export default class SketchExample extends Component {
-  socket = null;
 
 
   constructor(props) {

@@ -4,10 +4,8 @@ import Header from '../Header/Header';
 import Fade from 'react-reveal/Fade';
 import Account from '../Account/Account';
 import SuccessPage from '../Account/SuccessPage';
-import {Link} from 'react-router-dom';
 import {
-  getFromStorage,
-  setInStorage,
+  getFromStorage
 } from '../../utils/storage';
 
 class Register extends Component {

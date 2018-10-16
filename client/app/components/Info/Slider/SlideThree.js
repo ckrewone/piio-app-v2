@@ -3,7 +3,7 @@ import chat from '../../../img/chat.jpg';
 import Fade from 'react-reveal/Fade';
 
 
-const SlideThree = (props) => {
+const SlideThree = () => {
 
 
   let stylesImg = {
