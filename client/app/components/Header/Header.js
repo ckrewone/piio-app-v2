@@ -8,7 +8,7 @@ class Header extends Component {
     return (
       <nav className='navbar navbar-expand' id='global-nv'>
         <li className='brand'>
-          <Link to='/'><img src={img} className='App-logo'></img></Link>
+          <Link to='/home'><img src={img} className='App-logo'></img></Link>
         </li>
         <ul id='logsign' className='nav navbar-nav ml-auto'>
           <li className='nav-item'>

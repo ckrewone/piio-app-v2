@@ -10,6 +10,7 @@ import App from './components/App/App';
 import NotFound from './components/App/NotFound';
 import Register from './components/Register/Register'
 import Home from './components/Home/Home';
+import NewHome from './components/Home/NewHome';
 import Login from './components/Login/Login';
 import Info from './components/Info/Info';
 import Details from './components/Info/Details';
@@ -21,7 +22,8 @@ render((
   <Router>
     <App>
       <Switch>
-        <Route exact path='/' component={Home}/>
+        <Route exact path='/' component={NewHome}/>
+        <Route path='/home' component={Home}/>
         <Route path='/log' component={Login}/>
         <Route path='/reg' component={Register}/>
         <Route path='/more' component={Info}/>

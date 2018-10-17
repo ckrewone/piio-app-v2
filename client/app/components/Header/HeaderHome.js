@@ -11,7 +11,7 @@ class Header extends Component {
                <nav className='navbar navbar-expand' id='global-nv'>
                     <Flip left >
                     <li className='brand'>
-                         <Link to='/'><img src={img} className='App-logo'></img></Link>
+                         <Link to='/home'><img src={img} className='App-logo'></img></Link>
                     </li>
                </Flip>
                     <Fade right >

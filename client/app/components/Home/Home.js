@@ -11,21 +11,62 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loading: true,
+      loading: false,
       hide: false
     }
   }
 
   componentDidMount() {
-    setTimeout(() => {
-      this.setState({loading: false})
-    }, 3000);
-    setTimeout(() => {
-      this.setState({hide: true})
-    }, 2500);
+    if (this.props.initial) {
+      this.setState({loading:true});
+      setTimeout(() => {
+        this.setState({loading: false});
+      }, 3000);
+      setTimeout(() => {
+        this.setState({hide: true});
+      }, 2500);
+    }
   }
 
   render() {
+    let isFaded;
+    if(this.props.initial){
+      isFaded = <Fade>
+        <Header/>
+        <div id='main'>
+          <Zoom>
+            <h1>
+              <img style={imgStyle} src={img}></img>
+            </h1>
+            <h2>
+              <Link
+                className='btn btn-sample btn-lg '
+                role='button'
+                to='/more'>
+                START</Link>
+            </h2>
+          </Zoom>
+        </div>
+      </Fade>
+    } else {
+       isFaded = <div>
+        <Header/>
+        <div id='main'>
+        <Zoom>
+          <h1>
+            <img style={imgStyle} src={img}></img>
+          </h1>
+          <h2>
+            <Link
+              className='btn btn-sample btn-lg '
+              role='button'
+              to='/more'>
+              START</Link>
+          </h2>
+        </Zoom>
+      </div>
+      </div>
+    }
 
     let imgStyle = {
       height: '30vw',
@@ -33,25 +74,8 @@ class Home extends Component {
     }
     if (!this.state.loading) {
       return (
-
         <div className='return-page'>
-          <Fade>
-          <Header/>
-          <div id='main'>
-            <Zoom>
-              <h1>
-                <img style={imgStyle} src={img}></img>
-              </h1>
-              <h2>
-                <Link
-                  className='btn btn-sample btn-lg '
-                  role='button'
-                  to='/more'>
-                  START</Link>
-              </h2>
-            </Zoom>
-          </div>
-          </Fade>
+          {isFaded}
         </div>
       );
     } else {
