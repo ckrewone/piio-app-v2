@@ -35,7 +35,6 @@ module.exports = (io) => {
     });
 
     socket.on('disconnect', () => {
-      console.log('socket disconnect');
       counter--;
     })
   });

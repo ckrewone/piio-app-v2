@@ -133,7 +133,7 @@ class Login extends Component {
                       className='form-control'
                       onChange={this.onTextboxChangeSignInEmail}/>
                     <br/>
-                    <h3>Password:</h3>
+                    <h3>Hasło:</h3>
                     <input
                       type='password'
                       placeholder='Podaj hasło'

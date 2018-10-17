@@ -152,7 +152,7 @@ class Register extends Component {
                           </Fade>
                         ) : null
                       }
-                      <h3>First Name:</h3>
+                      <h3>Imię:</h3>
                       <input
                         type='text'
                         placeholder='Podaj Imię'
@@ -160,7 +160,7 @@ class Register extends Component {
                         className='form-control'
                         onChange={this.onTextboxChangeSignUpFirstName}/>
                       <br/>
-                      <h3>Last Name:</h3>
+                      <h3>Nazwisko:</h3>
                       <input
                         type='text'
                         placeholder='Podaj Nazwisko'
@@ -176,7 +176,7 @@ class Register extends Component {
                         className='form-control'
                         onChange={this.onTextboxChangeSignUpEmail}/>
                       <br/>
-                      <h3>Password:</h3>
+                      <h3>Hasło:</h3>
                       <input
                         type='password'
                         placeholder='Podaj Hasło'

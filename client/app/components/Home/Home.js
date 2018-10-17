@@ -21,10 +21,10 @@ class Home extends Component {
       this.setState({loading:true});
       setTimeout(() => {
         this.setState({loading: false});
-      }, 3000);
+      }, 2000);
       setTimeout(() => {
         this.setState({hide: true});
-      }, 2500);
+      }, 1500);
     }
   }
 
@@ -81,6 +81,7 @@ class Home extends Component {
     } else {
       return (
         <div className={this.state.hide ? 'bubbling hidden' : 'bubbling visible'}>
+	<Fade>
           <div className="bubblingG">
 	<span id="bubblingG_1">
 	</span>
@@ -89,6 +90,7 @@ class Home extends Component {
             <span id="bubblingG_3">
 	</span>
           </div>
+	</Fade>
         </div>
       );
     }

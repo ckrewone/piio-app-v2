@@ -77,7 +77,7 @@ class HeaderAccount extends Component {
           }
           <Fade right>
             <li className='nav-item'>
-              <Link className='nav-link' onClick={this.onLogOut} to='/'>Wyloguj<i
+              <Link className='nav-link' onClick={this.onLogOut} to='/home'>Wyloguj<i
                 className='ion-android-arrow-forward'/></Link>
             </li>
           </Fade>
