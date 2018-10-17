@@ -29,6 +29,11 @@ class Home extends Component {
   }
 
   render() {
+    let imgStyle = {
+      height: '30vw',
+      marginTop: '10vh'
+    }
+
     let isFaded;
     if(this.props.initial){
       isFaded = <Fade>
@@ -66,11 +71,6 @@ class Home extends Component {
         </Zoom>
       </div>
       </div>
-    }
-
-    let imgStyle = {
-      height: '30vw',
-      marginTop: '10vh'
     }
     if (!this.state.loading) {
       return (
