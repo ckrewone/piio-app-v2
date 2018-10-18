@@ -13,7 +13,7 @@ const config = require('../config/config');
 const webpackConfig = require('../webpack.config');
 const io = require('socket.io')(http);
 const isDev = process.env.NODE_ENV !== 'production';
-const port  = process.env.PORT || 3000;
+const port  = process.env.PORT || 3001;
 
 
 

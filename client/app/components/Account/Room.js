@@ -8,7 +8,7 @@ import ReactDOM from "react-dom";
 import {getFromStorage} from "../../utils/storage";
 
 
-const socket = io('http://80.211.180.21:3000');
+const socket = io('http://80.211.180.21:3001');
 
 export default class Room extends React.Component {
   constructor(props) {
