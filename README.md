@@ -3,7 +3,7 @@
 ### MERN project
 ##### Author: Michał Żakowski
 
-#### How to run application?
+#### How to run the application?
 
 1. Configure config/config.example.js
 2. Run Mongod
