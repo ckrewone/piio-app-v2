@@ -57,11 +57,6 @@ module.exports = {
                          use: [
                               {
                                    loader: 'css-loader',
-                                   options: {
-                                        'sourceMap': true,
-                                        'importLoaders': 1,
-                                        'mininize': true
-                                   }
                               },
                               {
                                    loader: 'postcss-loader',
