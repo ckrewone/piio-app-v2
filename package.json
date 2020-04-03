@@ -13,7 +13,7 @@
     "body-parser": "1.18.3",
     "fn": "0.2.0",
     "hoek": "5.0.3",
-    "mongoose": "4.13.14",
+    "mongoose": "5.7.5",
     "node-sass": "4.9.0",
     "react": "15.6.1",
     "react-dom": "15.6.1",
