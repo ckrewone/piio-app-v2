@@ -10,7 +10,7 @@ import {Icon} from 'react-icons-kit'
 
 import io from 'socket.io-client';
 
-const wsClient = io('http://80.211.180.21:3000');
+const wsClient = io('http://localhost:3000');
 
 
 export default class SketchExample extends Component {

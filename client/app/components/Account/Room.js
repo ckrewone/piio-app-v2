@@ -6,7 +6,7 @@ import Fade from "react-reveal/Fade";
 import ReactDOM from "react-dom";
 
 
-const socket = io('http://80.211.180.21:3000');
+const socket = io('http://localhost:3000');
 
 export default class Room extends React.Component {
   constructor() {
